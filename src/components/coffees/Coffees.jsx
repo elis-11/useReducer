@@ -7,6 +7,7 @@ export const Coffees = () => {
   const { coffees, savedCoffee, message, feedbacks } = state;
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
   const updateAmount = (amount) => {
     setAmount(Number(amount));
@@ -25,13 +26,15 @@ export const Coffees = () => {
     const feedbackNew = {
       _id: Date.now().toString(),
       email: email,
+      text: text,
     };
     console.log(feedbackNew);
     dispatch({
-      type: 'feedback',
+      type: "feedback",
       payload: feedbackNew,
-    })
-    setEmail('')
+    });
+    setEmail("");
+    setText("");
   };
 
   return (
@@ -65,14 +68,20 @@ export const Coffees = () => {
       <form onSubmit={onFeedback}>
         <input
           type="text"
-          placeholder="email"
+          placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="your feedback..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
         <button type="submit"> Send</button>
         <div>
           {feedbacks.map((feedback) => (
-            <div key={feedback._id}>{feedback.email}</div>
+            <div key={feedback._id}>{feedback.email}  {feedback.text}</div>
           ))}
         </div>
       </form>

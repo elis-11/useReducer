@@ -1,7 +1,7 @@
 import coffeesJson from "../assets/coffees.json";
 
 export const initialState = {
-  feedbacks: [{_id: 'i1', email: 'Tralala'}],
+  feedbacks: [{_id: 'i1', email: 'Tralala', text: 'tralala'}],
   coffees: coffeesJson,
   savedCoffee: undefined,
   message: "",
