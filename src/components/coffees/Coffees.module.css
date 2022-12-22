@@ -1,0 +1,17 @@
+.root{
+    display: flex;
+    flex-direction: column;
+}
+.coffees{
+    display: flex;
+
+    justify-content: space-between;
+    margin: 2rem;
+}
+.coffee{
+    margin: 2rem;
+
+}
+.coffee:hover{
+    opacity: .6;
+}

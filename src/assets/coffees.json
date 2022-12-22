@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "c1",
+        "name": "Crema",
+        "price": 0.99,
+        "image": "https://source.unsplash.com/100x100/?coffee,crema "
+    },
+    {
+        "_id": "c2",
+        "name": "Irish",
+        "price": 2.99,
+        "image": "https://source.unsplash.com/100x100/?coffee,irish "
+    },
+    {
+        "_id": "c3",
+        "name": "Latte",
+        "price": 1.99,
+        "image": "https://source.unsplash.com/100x100/?coffee,latte "
+    }
+]
