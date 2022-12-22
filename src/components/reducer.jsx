@@ -27,7 +27,7 @@ export const reducer = (state, action) => {
           "Selected: " +
           action.payload.name +
           " costs " +
-          action.payload.price +
+          action.payload.costs +
           " €",
         savedCoffee: action.payload,
       };

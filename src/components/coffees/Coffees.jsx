@@ -16,7 +16,7 @@ export const Coffees = () => {
     dispatch({
       type: "newMessage",
       payload:
-        amount >= savedCoffee.price
+        amount >= savedCoffee.costs
           ? "Enjoy your " + " " + savedCoffee.name
           : "No money no coffee...",
     });
@@ -28,7 +28,6 @@ export const Coffees = () => {
       email: email,
       text: text,
     };
-    console.log(feedbackNew);
     dispatch({
       type: "feedback",
       payload: feedbackNew,
@@ -53,28 +52,31 @@ export const Coffees = () => {
           >
             <img src={coffee.image} alt={coffee.name} />
             <div className="name">{coffee.name}</div>
-            {/* <div className="price">{coffee.price}</div> */}
+            {/* <div className="costs">{coffee.costs}</div> */}
           </div>
         ))}
       </div>
       <input
-      className={style.input}
+        className={style.input}
         type="number"
         value={amount}
         onChange={(e) => updateAmount(e.target.value)}
       />
-      <button className={style.button} onClick={() => onClickButton()}>buy now!</button>
+      <button className={style.button} onClick={() => onClickButton()}>
+        buy now!
+      </button>
       <div className="message">{message}</div>
 
       <form onSubmit={onFeedback}>
-        <input className={style.input}
+        <input
+          className={style.input}
           type="text"
           placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-        className={style.input}
+          className={style.input}
           type="text"
           placeholder="your feedback..."
           value={text}
@@ -83,7 +85,9 @@ export const Coffees = () => {
         <button type="submit"> Send</button>
         <div>
           {feedbacks.map((feedback) => (
-            <div key={feedback._id}>{feedback.email}  {feedback.text}</div>
+            <div key={feedback._id}>
+              {feedback.email} {feedback.text}
+            </div>
           ))}
         </div>
       </form>
