@@ -1,7 +1,7 @@
 import coffeesJson from "../assets/coffees.json";
 
 export const initialState = {
-  feedbacks: [{_id: 'i1', email: 'Tralala', text: 'tralala'}],
+  feedbacks: [{ _id: "i1", email: "elis@gmail.com", text: "I like it!" }],
   coffees: coffeesJson,
   savedCoffee: undefined,
   message: "",
@@ -13,14 +13,29 @@ export const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (action.type) {
-
-    case 'feedback': {
-        return {
-            ...state,
-            feedbacks: [...state.feedbacks, payload]
-        }
+    case "feedback": {
+      return {
+        ...state,
+        feedbacks: [...state.feedbacks, payload],
+      };
     }
-
+    case "selectedCoffee":
+      console.log(action.payload);
+      return {
+        ...state,
+        message:
+          "Selected: " +
+          action.payload.name +
+          " costs " +
+          action.payload.price +
+          " €",
+        savedCoffee: action.payload,
+      };
+    case "newMessage":
+      return {
+        ...state,
+        message: payload,
+      };
     case "increment":
       return {
         ...state,
@@ -30,18 +45,6 @@ export const reducer = (state, action) => {
       return {
         ...state,
         counter: state.counter - action.payload,
-      };
-    case "selectedCoffee":
-      console.log(action.payload);
-      return {
-        ...state,
-        message: "Selected: " + action.payload.name,
-        savedCoffee: action.payload,
-      };
-    case "newMessage":
-      return {
-        ...state,
-        message: payload,
       };
   }
 };

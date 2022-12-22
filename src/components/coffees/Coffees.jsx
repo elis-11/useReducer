@@ -53,26 +53,28 @@ export const Coffees = () => {
           >
             <img src={coffee.image} alt={coffee.name} />
             <div className="name">{coffee.name}</div>
-            <div className="price">{coffee.price}</div>
+            {/* <div className="price">{coffee.price}</div> */}
           </div>
         ))}
       </div>
       <input
+      className={style.input}
         type="number"
         value={amount}
         onChange={(e) => updateAmount(e.target.value)}
       />
-      <button onClick={() => onClickButton()}>buy now!</button>
+      <button className={style.button} onClick={() => onClickButton()}>buy now!</button>
       <div className="message">{message}</div>
 
       <form onSubmit={onFeedback}>
-        <input
+        <input className={style.input}
           type="text"
           placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+        className={style.input}
           type="text"
           placeholder="your feedback..."
           value={text}

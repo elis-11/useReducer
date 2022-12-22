@@ -15,3 +15,9 @@
 .coffee:hover{
     opacity: .6;
 }
+.input{
+    height: 2rem;
+}
+.button{
+    height: 2rem;
+}
