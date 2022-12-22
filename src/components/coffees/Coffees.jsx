@@ -1,10 +1,29 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { initialState, reducer } from "../reducer";
 import style from "./Coffees.module.css";
 
 export const Coffees = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { coffees, savedCoffee, message } = state;
+  const [amount, setAmount] = useState("");
+
+  const updateAmount = (amount) => {
+    setAmount(Number(amount));
+  };
+  const onClickButton = () => {
+    dispatch({
+      type: "newMessage",
+      payload:
+        amount >= savedCoffee.price
+          ? "Enjoy your" + savedCoffee.name
+          : "No coffee for no money...",
+    });
+    // payload: 'Enjoy your' + savedCoffee.name
+    // : dispatch({
+    //   type: 'newMessage',
+    //   payload: 'No coffee for no money...'
+    // })
+  };
 
   return (
     <div className={style.root}>
@@ -26,8 +45,12 @@ export const Coffees = () => {
           </div>
         ))}
       </div>
-      <input type="number" onChange={(e) => e.target.value} />
-      <button >buy now!</button>
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => updateAmount(e.target.value)}
+      />
+      <button onClick={() => onClickButton()}>buy now!</button>
       <div className="message">{message}</div>
     </div>
   );
