@@ -69,18 +69,18 @@ export const Coffees = () => {
 
       <form onSubmit={onFeedback}>
         <input
-          className={style.input}
+          className={style.feedback}
           type="text"
           placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          className={style.input}
           type="text"
           placeholder="your feedback..."
           value={text}
           onChange={(e) => setText(e.target.value)}
+          className={style.feedback}
         />
         <button type="submit"> Send</button>
         <div>
