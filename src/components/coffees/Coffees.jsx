@@ -4,8 +4,9 @@ import style from "./Coffees.module.css";
 
 export const Coffees = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { coffees, savedCoffee, message } = state;
+  const { coffees, savedCoffee, message, feedbacks } = state;
   const [amount, setAmount] = useState("");
+  const [email, setEmail] = useState("");
 
   const updateAmount = (amount) => {
     setAmount(Number(amount));
@@ -15,14 +16,22 @@ export const Coffees = () => {
       type: "newMessage",
       payload:
         amount >= savedCoffee.price
-          ? "Enjoy your" + savedCoffee.name
-          : "No coffee for no money...",
+          ? "Enjoy your " + " " + savedCoffee.name
+          : "No money no coffee...",
     });
-    // payload: 'Enjoy your' + savedCoffee.name
-    // : dispatch({
-    //   type: 'newMessage',
-    //   payload: 'No coffee for no money...'
-    // })
+  };
+  const onFeedback = (e) => {
+    e.preventDefault();
+    const feedbackNew = {
+      _id: Date.now().toString(),
+      email: email,
+    };
+    console.log(feedbackNew);
+    dispatch({
+      type: 'feedback',
+      payload: feedbackNew,
+    })
+    setEmail('')
   };
 
   return (
@@ -52,6 +61,21 @@ export const Coffees = () => {
       />
       <button onClick={() => onClickButton()}>buy now!</button>
       <div className="message">{message}</div>
+
+      <form onSubmit={onFeedback}>
+        <input
+          type="text"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit"> Send</button>
+        <div>
+          {feedbacks.map((feedback) => (
+            <div key={feedback._id}>{feedback.email}</div>
+          ))}
+        </div>
+      </form>
     </div>
   );
 };
