@@ -82,11 +82,12 @@ export const Coffees = () => {
           onChange={(e) => setText(e.target.value)}
           className={style.feedback}
         />
-        <button type="submit"> Send</button>
+        <button className={style.send} type="submit"> Send feedback</button>
         <div>
           {feedbacks.map((feedback) => (
-            <div key={feedback._id}>
-              {feedback.email} {feedback.text}
+            <div className={style.feedbacks} key={feedback._id}>
+              <div className={style.item}>{feedback.email}</div>
+              <div className={style.item}>{feedback.text} </div>
             </div>
           ))}
         </div>

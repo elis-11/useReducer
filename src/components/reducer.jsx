@@ -1,5 +1,6 @@
 import coffeesJson from "../assets/coffees.json";
 
+
 export const initialState = {
   feedbacks: [{ _id: "i1", email: "elis@gmail.com", text: "I like it!" }],
   coffees: coffeesJson,
