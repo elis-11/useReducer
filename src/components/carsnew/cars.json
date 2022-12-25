@@ -1,0 +1,74 @@
+[
+    {
+        "_id": "f1",
+        "category": "BMW",
+        "name": "BMW 6 Series",
+        "price": 49000,
+        "year": 2012,
+        "new": true,
+        "image": "https://source.unsplash.com/120x120/?car,BMW_6_Series"
+    },
+    {
+        "_id": "f2",
+        "category": "Toyota",
+        "name": "Toyota Prius",
+        "price": 36000,
+        "year": 2018,
+        "new": true,
+        "image": "https://source.unsplash.com/120x120/?car,Toyota_Prius"
+    },
+    {
+        "_id": "f3",
+        "category": "BMW",
+        "name": "BMW 7 Series",
+        "price": 80000,
+        "year": 2015,
+        "new": true,
+        "image": "https://source.unsplash.com/120x120/?car,BMW_7_Series"
+    },
+    {
+        "_id": "f4",
+        "category": "BMW",
+        "name": "BMW 8 Series",
+        "price": 79000,
+        "year": 2014,
+        "new": true,
+        "image": "https://source.unsplash.com/120x120/?car,BMW_8_Series"
+    },
+    {
+        "_id": "f5",
+        "category": "Toyota",
+        "name": "Toyota Camry",
+        "price": 4000,
+        "year": 2000,
+        "new": false,
+        "image": "https://source.unsplash.com/120x120/?car,Toyota_Camry"
+    },
+    {
+        "_id": "f6",
+        "category": "Toyota",
+        "name": "Toyota Land Cruiser",
+        "price": 70000,
+        "year": 2020,
+        "new": true,
+        "image": "https://source.unsplash.com/120x120/?car,toyota_Land_Cruiser"
+    },
+    {
+        "_id": "f7",
+        "category": "Lexus",
+        "name": "Lexus GS 350",
+        "price": 5000,
+        "year": 2011,
+        "new": false,
+        "image": "https://source.unsplash.com/120x120/?car,Lexus_GS_350"
+    },
+    {
+        "_id": "f8",
+        "category": "Toyota",
+        "name": "Toyota Corolla",
+        "price": 15000,
+        "year": 2019,
+        "new": false,
+        "image": "https://source.unsplash.com/120x120/?car,Toyota_Corolla"
+    }
+]
