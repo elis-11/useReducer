@@ -9,10 +9,6 @@ export const CarsNew =() => {
   const [priceMax, setPriceMax] = useState("");
   const [filteredCategory, setFilteredCategory] = useState("");
   let filteredCars = cars;
-
-
-
-
   
 
   console.log(filteredCategory);
