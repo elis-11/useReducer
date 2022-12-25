@@ -1,0 +1,20 @@
+#root {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.search {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.car {
+  margin: 0.5rem;
+  border: 1px solid grey;
+  padding: 1rem;
+}
