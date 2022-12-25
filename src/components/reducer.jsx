@@ -26,12 +26,11 @@ export const reducer = (state, action) => {
         feedbacks: [...state.feedbacks, payload],
       };
     }
-
     case "addTodo": {
       return {
         ...state,
-        todos: [...state.todos, payload],
-      };
+        todos: [...state.todos, payload]
+      }
     }
 
     case "selectedCoffee":
