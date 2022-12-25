@@ -6,23 +6,22 @@ import style from "./Todo.module.css";
 export const Todo = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { todos, message } = state;
-  const [newTodo, setNewTodo] = useState({
-    title: "",
-    description: "",
-  });
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const addTodo = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const todoNew = {
       _id: Date.now().toString(),
-      title: newTodo.title,
-      description: newTodo.description,
+      title: title,
+      description: description,
     };
     dispatch({
       type: "addTodo",
-      payload: todoNew
-    })
-    setNewTodo({...newTodo, title: "", description: "" });
+      payload: todoNew,
+    });
+    setTitle("");
+    setDescription("");
   };
 
   return (
@@ -31,16 +30,15 @@ export const Todo = () => {
         <input
           type="text"
           placeholder="title"
-          name="title"
-          value={newTodo.title}
-          onChange={setNewTodo}
+          value={title}
+          onChange={e=>setTitle(e.target.value)}
         />
         <input
           type="text"
           placeholder="description"
-          name="description"
-          value={newTodo.description}
-          onChange={setNewTodo}/>
+          value={description}
+          onChange={e=>setDescription(e.target.value)}
+        />
         <button type="submit">Add</button>
       </form>
       <div className={style.todos}>

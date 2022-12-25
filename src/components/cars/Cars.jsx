@@ -23,6 +23,7 @@ export const Cars = () => {
     );
     return filteredCars;
   };
+  
   const filterByYear = (filteredData) => {
     // Avoid filter for null value
     if (!selectedYear) {
