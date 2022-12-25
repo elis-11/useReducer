@@ -1,6 +1,5 @@
 import coffeesJson from "../assets/coffees.json";
 
-
 export const initialState = {
   feedbacks: [{ _id: "i1", email: "elis@gmail.com", text: "I like it!" }],
   coffees: coffeesJson,
@@ -8,6 +7,13 @@ export const initialState = {
   message: "",
   arr: [],
   counter: 1,
+  todos: [
+    {
+      _id: "t1",
+      title: "Learning",
+      description: "Javascript",
+    },
+  ],
 };
 
 export const reducer = (state, action) => {
@@ -20,6 +26,14 @@ export const reducer = (state, action) => {
         feedbacks: [...state.feedbacks, payload],
       };
     }
+
+    case "addTodo": {
+      return {
+        ...state,
+        todos: [...state.todos, payload],
+      };
+    }
+
     case "selectedCoffee":
       console.log(action.payload);
       return {

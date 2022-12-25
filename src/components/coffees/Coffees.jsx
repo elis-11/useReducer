@@ -66,7 +66,8 @@ export const Coffees = () => {
         buy now!
       </button>
       <div className="message">{message}</div>
-
+      
+        {/* FEEDBACK */}
       <form onSubmit={onFeedback}>
         <input
           className={style.feedback}
