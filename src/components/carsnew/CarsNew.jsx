@@ -10,11 +10,6 @@ export const CarsNew =() => {
   const [filteredCategory, setFilteredCategory] = useState("");
   let filteredCars = cars;
   
-
-
-
-
-  
   console.log(filteredCategory);
   if (filteredCategory) {
     filteredCars = filteredCars.filter((car) => {
