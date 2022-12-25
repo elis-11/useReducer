@@ -17,6 +17,10 @@ export const CarsNew =() => {
     });
   }
 
+
+
+  
+
   if (productName) {
     filteredCars = filteredCars.filter((car) => {
       return car.name.toLowerCase().includes(productName.toLowerCase());
