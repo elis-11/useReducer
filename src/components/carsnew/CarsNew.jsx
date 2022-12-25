@@ -11,6 +11,10 @@ export const CarsNew =() => {
   let filteredCars = cars;
   
 
+
+
+
+  
   console.log(filteredCategory);
   if (filteredCategory) {
     filteredCars = filteredCars.filter((car) => {
