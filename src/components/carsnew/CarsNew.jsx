@@ -11,15 +11,17 @@ export const CarsNew =() => {
   let filteredCars = cars;
   
   console.log(filteredCategory);
-  if (filteredCategory) {
-    filteredCars = filteredCars.filter((car) => {
-      return car.category.includes(filteredCategory);
-    });
-  }
-
+  // if (filteredCategory) {
+  //   filteredCars = filteredCars.filter((car) => {
+  //     return car.category.includes(filteredCategory);
+  //   });
+  // }
+  // || - equal
+  
   if (productName) {
     filteredCars = filteredCars.filter((car) => {
       return car.name.toLowerCase().includes(productName.toLowerCase());
+      // return car.name.includes(productName);
     });
   }
 
@@ -78,7 +80,7 @@ export const CarsNew =() => {
               name="category"
               value="Toyota"
               onChange={(e) =>
-                setFilteredCategory(e.target.checked ? e.target.value : "")
+                setProductName(e.target.checked ? e.target.value : "")
               }
             />
             <span>Toyota</span>
@@ -89,7 +91,7 @@ export const CarsNew =() => {
               name="category"
               value="BMW"
               onChange={(e) =>
-                setFilteredCategory(e.target.checked ? e.target.value : "")
+                setProductName(e.target.checked ? e.target.value : "")
               }
             />
             <span>BMW</span>
@@ -100,7 +102,7 @@ export const CarsNew =() => {
               name="category"
               value="Lexus"
               onChange={(e) =>
-                setFilteredCategory(e.target.checked ? e.target.value : "")
+                setProductName(e.target.checked ? e.target.value : "")
               }
             />
             <span>Lexus</span>

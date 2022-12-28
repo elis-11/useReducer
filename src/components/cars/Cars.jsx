@@ -31,7 +31,7 @@ export const Cars = () => {
     }
 
     const filteredCars = filteredData.filter(
-      (car) => car.release_year === selectedYear
+      (car) => car.year === selectedYear
     );
     return filteredCars;
   };
@@ -100,7 +100,7 @@ export const Cars = () => {
         {filteredList.map((item, index) => (
           <div className="car-item" key={index}>
             <div className="car-name">{`Name: ${item.name}`}</div>
-            <div className="car-year">{`Year: ${item.release_year}`}</div>
+            <div className="car-year">{`Year: ${item.year}`}</div>
             <img className="car-image" src={item.url} alt="car-img" />
           </div>
         ))}
