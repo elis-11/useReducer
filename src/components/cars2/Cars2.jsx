@@ -4,26 +4,30 @@ import './Cars.scss'
 
 export const Cars2 = () => {
   const [cars, setCars] = useState(carsJson)
-  const [selectedBrand, setSelectedBrand] = useState("")
+  const [selectedBrand, setSelectedBrand] = useState(cars[0].value)
   let filteredCars = cars
 
-  const onChange = event => {
-    const value = event.target.value
-    setSelectedBrand(value)
+  const handleChange = e => {
+    setSelectedBrand(e.target.value)
   }
 
   return (
     <div className='Cars'>
       <div className="filter">
         <div className="brends">
-          <select onChange={onChange} 
+          <select 
+            value={selectedBrand}
+            onChange={handleChange}
           >
-          <option value="">All</option>
+            {filteredCars.map(c => (
+                          <option value={c.value} key={c.value}>{c.name}</option>
+                        ))}
+          {/* <option value="">All</option>
           <option value="BMW">BMW</option>
           <option value="VW">VW</option>
-          <option value="Audi">Audi</option>
+          <option value="Audi">Audi</option> */}
           </select>
-          {selectedBrand && <h2>{selectedBrand} was selected</h2>}
+          {/* {selectedBrand && <h2>{selectedBrand} was selected</h2>} */}
         </div>
       </div>
 
