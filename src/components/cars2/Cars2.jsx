@@ -1,13 +1,31 @@
 import { useState } from 'react'
 import carsJson from './cars.json'
-import '../cars/Cars.scss'
+import './Cars.scss'
 
 export const Cars2 = () => {
   const [cars, setCars] = useState(carsJson)
+  const [selectedBrand, setSelectedBrand] = useState("")
+  let filteredCars = cars
+
+  const onChange = event => {
+    const value = event.target.value
+    setSelectedBrand(value)
+  }
 
   return (
     <div className='Cars'>
-
+      <div className="filter">
+        <div className="brends">
+          <select onChange={onChange} 
+          >
+          <option value="">All</option>
+          <option value="BMW">BMW</option>
+          <option value="VW">VW</option>
+          <option value="Audi">Audi</option>
+          </select>
+          {selectedBrand && <h2>{selectedBrand} was selected</h2>}
+        </div>
+      </div>
 
 
       <div className="car-list">
