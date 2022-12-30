@@ -17,12 +17,16 @@ export const Cars = () => {
     if (!selectedBrand) {
       return filteredData;
     }
-
     const filteredCars = filteredData.filter(
       (car) => car.name.split(" ").indexOf(selectedBrand) !== -1
     );
     return filteredCars;
   };
+    // Update seletedBrand state
+    const handleBrandChange = (event) => {
+      setSelectedBrand(event.target.value);
+    };
+  
 
   const filterByYear = (filteredData) => {
     // Avoid filter for null value
@@ -34,11 +38,6 @@ export const Cars = () => {
       (car) => car.year === selectedYear
     );
     return filteredCars;
-  };
-
-  // Update seletedBrand state
-  const handleBrandChange = (event) => {
-    setSelectedBrand(event.target.value);
   };
 
   // Toggle seletedYear state
