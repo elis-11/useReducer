@@ -1,0 +1,14 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        .card{
+            width: 20%;
+            height: 400px;
+            margin: 2rem;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "title": "Poha",
+        "category": "Breakfast",
+        "price": "$1",
+        "img": "https://c.ndtvimg.com/2021-08/loudr2go_aloo-poha_625x300_05_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
+        "desc": " Poha. Light, filling and easy to make, poha is one famous breakfast that is eaten almost everywhere in the country. "
+      },
+      {
+        "id": "2",
+        "title": "Upma",
+        "category": "Breakfast",
+        "price": "$1",
+        "img": "https://c.ndtvimg.com/2021-04/37hi8sl_rava-upma_625x300_17_April_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
+        "desc": " A quintessential South Indian Breakfast! Made with protein-packed urad dal and semolina followed by crunchy veggies and curd."
+      },
+      {
+        "id": "3",
+        "title": "Cheela",
+        "category": "Breakfast",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,meat",
+        "desc": "A staple across Indian households, moong dal is widely used in a number of Indian delicacies."
+      },
+      {
+        "id": "4",
+        "title": "Channa Kulcha",
+        "category": "Lunch",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,cheese",
+        "desc": "A classic dish that never goes out of style. The quintessential chana kulcha  needs only a few ingredients - cumin powder, ginger."
+      },
+      {
+        "id": "5",
+        "title": "Egg Curry",
+        "category": "Lunch",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,pepperoni",
+        "desc": "Eggs are a versatile food that can be cooked for any meal of the day. From breakfast to dinner, it can be a go-to food. "
+      },
+      {
+        "id": "6",
+        "title": "Paneer Aachari",
+        "category": "Lunch",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,margherita",
+        "desc": "Don't get intimidated by the list of ingredients because not only are already in your kitchen cabinet, but also because all they'll need is 20 minutes of your time. "
+      },
+      {
+        "id": "7",
+        "title": "Fish Fry",
+        "category": "Dinner",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,greek",
+        "desc": "Get your daily dose of perfect protein. Pieces of surmai fish marinated in garlic, cumin, fennel, curry leaves, and tomatoes are pan-fried in refined oil and served hot. "
+      },
+      {
+        "id": "8",
+        "title": "Dum Alloo",
+        "category": "Dinner",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,detroit",
+        "desc": "Your family will thank you for this fantastic bowl of dum aloo cooked Lakhnawi style. Take some potatoes, crumbled paneer, kasuri methi, butter, onions, and some ghee."
+      },
+      {
+        "id": "9",
+        "title": "Malai Kofta",
+        "category": "Dinner",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,cheese",
+        "desc": "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya. This velvety and creamy recipe will leave you licking your fingers."
+      },
+      {
+        "id": "10",
+        "title": "Malai Kofta",
+        "category": "Snaks",
+        "price": "$1",
+        "img": "https://source.unsplash.com/200x200/?pizza,veggie",
+        "desc": "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya. This velvety and creamy recipe will leave you licking your fingers."
+      }
+    ]
