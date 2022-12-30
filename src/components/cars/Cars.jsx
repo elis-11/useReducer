@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./Cars.scss";
-import carsJson from "./cars.json"
+import carsJson from "./cars.json";
 
 export const Cars = () => {
   // Array of all car objects
-  const carList = (carsJson);
+  const carList = carsJson;
   // List of all cars satisfing all the filters
   const [filteredList, setFilteredList] = useState(carList);
   // Selected Brand name filter
@@ -17,13 +17,13 @@ export const Cars = () => {
     if (!selectedBrand) {
       return filteredData;
     }
-    
+
     const filteredCars = filteredData.filter(
       (car) => car.name.split(" ").indexOf(selectedBrand) !== -1
     );
     return filteredCars;
   };
-  
+
   const filterByYear = (filteredData) => {
     // Avoid filter for null value
     if (!selectedYear) {

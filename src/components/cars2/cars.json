@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "c1",
+        "name": "BMW M6",
+        "image": "https://mediapool.bmwgroup.com/cache/P9/201411/P90169551/P90169551-the-new-bmw-m6-coup-exterior-12-2014-600px.jpg",
+        "year": 2020
+    },
+    {
+        "_id": "c2",
+        "name": "VW Polo",
+        "image": "https://cdn.euroncap.com/media/30740/volkswagen-polo-359-235.jpg?mode=crop&width=359&height=235",
+        "year": 2018
+    },
+    {
+        "_id": "c3",
+        "name": "Audi S6",
+        "image": "https://www.motortrend.com/uploads/sites/5/2020/03/6-2020-audi-s6.jpg?fit=around%7C875:492.1875",
+        "year": 2020
+    },
+    {
+        "_id": "c4",
+        "name": "BMW M2",
+        "image": "https://imgd.aeplcdn.com/0x0/cw/ec/37092/BMW-M2-Exterior-141054.jpg?wm=0",
+        "year": 2019
+    },
+    {
+        "_id": "c5",
+        "name": "Audi A3",
+        "image": "https://cdn.motor1.com/images/mgl/BEooZ/s3/2021-audi-s3.jpg",
+        "year": 2019
+    }
+]

@@ -4,6 +4,7 @@ import { Count } from "./components/count/Count";
 import './App.css'
 import { Todo } from "./components/todo/Todo";
 import { Cars } from "./components/cars/Cars";
+import { Cars2 } from "./components/cars2/Cars2";
 import { CarsNew } from "./components/carsnew/CarsNew";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <NavLink to='/count'>Count</NavLink>
         <NavLink to='/todo'>Todo</NavLink>
         <NavLink to='/cars'>Cars</NavLink>
+        <NavLink to='/cars2'>Cars2</NavLink>
         <NavLink to='/carsnew'>CarsNew</NavLink>
       </nav>
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="count" element={<Count />} />
         <Route path="todo" element={<Todo />} />
         <Route path="cars" element={<Cars/>} />
+        <Route path="cars2" element={<Cars2/>} />
         <Route path="carsnew" element={<CarsNew/>} />
       </Routes>
     </div>
