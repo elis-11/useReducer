@@ -1,0 +1,60 @@
+.Cars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background-color: #fff !important;
+  // align-items: center;
+  top: 1rem;
+  height: 90vh;
+  font-size: 20px;
+  .year {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+  }
+  .filter,
+  .active {
+    padding: 10px 20px;
+    min-width: 50px;
+    border-radius: 2rem;
+  }
+  .brand-filter {
+    display: flex;
+    margin: 15px;
+  }
+  .brand-input {
+    width: 80px;
+    margin: 0 10px;
+    height: 30px;
+  }
+  .filter:hover,
+  .active {
+    background-color: #48b393;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: all 0.1s;
+  }
+
+  .cars {
+    display: grid;
+    gap: 20px;
+    min-height: 480px;
+    grid-template-columns: repeat(3, 1fr);
+    .car {
+      display: flex;
+      height: 200px;
+      flex-direction: column;
+      background-color: #fafafa;
+      border: 1px solid black;
+      padding: 10px;
+      gap: 5px;
+      color: black;
+      .image {
+        width: 200px;
+        height: 180px;
+      }
+    }
+  }
+}

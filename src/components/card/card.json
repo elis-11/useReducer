@@ -5,7 +5,7 @@
         "category": "Breakfast",
         "price": "$1",
         "img": "https://c.ndtvimg.com/2021-08/loudr2go_aloo-poha_625x300_05_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
-        "desc": " Poha. Light, filling and easy to make, poha is one famous breakfast that is eaten almost everywhere in the country. "
+        "desc": " Poha. Light, filling and easy to make."
       },
       {
         "id": "2",
@@ -13,7 +13,7 @@
         "category": "Breakfast",
         "price": "$1",
         "img": "https://c.ndtvimg.com/2021-04/37hi8sl_rava-upma_625x300_17_April_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
-        "desc": " A quintessential South Indian Breakfast! Made with protein-packed urad dal and semolina followed by crunchy veggies and curd."
+        "desc": " A quintessential South Indian Breakfast!"
       },
       {
         "id": "3",
@@ -21,7 +21,7 @@
         "category": "Breakfast",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,meat",
-        "desc": "A staple across Indian households, moong dal is widely used in a number of Indian delicacies."
+        "desc": "A staple across Indian households."
       },
       {
         "id": "4",
@@ -29,7 +29,7 @@
         "category": "Lunch",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,cheese",
-        "desc": "A classic dish that never goes out of style. The quintessential chana kulcha  needs only a few ingredients - cumin powder, ginger."
+        "desc": "A classic dish that never goes out of style."
       },
       {
         "id": "5",
@@ -37,7 +37,7 @@
         "category": "Lunch",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,pepperoni",
-        "desc": "Eggs are a versatile food that can be cooked for any meal of the day. From breakfast to dinner, it can be a go-to food. "
+        "desc": "Eggs are a versatile food that can be cooked. "
       },
       {
         "id": "6",
@@ -45,7 +45,7 @@
         "category": "Lunch",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,margherita",
-        "desc": "Don't get intimidated by the list of ingredients because not only are already in your kitchen cabinet, but also because all they'll need is 20 minutes of your time. "
+        "desc": "Don't get intimidated by the list of ingredients."
       },
       {
         "id": "7",
@@ -53,7 +53,7 @@
         "category": "Dinner",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,greek",
-        "desc": "Get your daily dose of perfect protein. Pieces of surmai fish marinated in garlic, cumin, fennel, curry leaves, and tomatoes are pan-fried in refined oil and served hot. "
+        "desc": "Get your daily dose of perfect protein."
       },
       {
         "id": "8",
@@ -61,7 +61,7 @@
         "category": "Dinner",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,detroit",
-        "desc": "Your family will thank you for this fantastic bowl of dum aloo cooked Lakhnawi style. Take some potatoes, crumbled paneer, kasuri methi, butter, onions, and some ghee."
+        "desc": "Your family will thank you for this fantastic."
       },
       {
         "id": "9",
@@ -69,7 +69,7 @@
         "category": "Dinner",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,cheese",
-        "desc": "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya. This velvety and creamy recipe will leave you licking your fingers."
+        "desc": "A rich gravy made of khus khus, coconut and milk."
       },
       {
         "id": "10",
@@ -77,6 +77,6 @@
         "category": "Snaks",
         "price": "$1",
         "img": "https://source.unsplash.com/200x200/?pizza,veggie",
-        "desc": "A rich gravy made of khus khus, coconut and milk that tastes best with koftas made from khoya. This velvety and creamy recipe will leave you licking your fingers."
+        "desc": "A rich gravy made of khus khus, coconut and milk ."
       }
     ]
