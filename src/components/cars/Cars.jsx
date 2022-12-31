@@ -7,9 +7,7 @@ export const Cars = () => {
   const carList = carsJson;
   // List of all cars satisfing all the filters
   const [filteredList, setFilteredList] = useState(carList);
-  // Selected Brand name filter
   const [selectedBrand, setSelectedBrand] = useState("");
-  // Selected Year filter
   const [selectedYear, setSelectedYear] = useState();
 
   const filterByBrand = (filteredData) => {
@@ -63,7 +61,7 @@ export const Cars = () => {
       <div className="brand-filter">
         <div>Filter by Brand :</div>
         <select
-          id="brand-input"
+          className="brand-input"
           value={selectedBrand}
           onChange={handleBrandChange}
         >
@@ -74,33 +72,33 @@ export const Cars = () => {
         </select>
       </div>
       <div>Filter by Year</div>
-      <div id="year-options" onClick={handleYearChange}>
+      <div className="year" onClick={handleYearChange}>
         <div
-          className={selectedYear === 2018 ? "active-option" : "filter-option"}
+          className={selectedYear === 2018 ? "active" : "filter"}
           id="2018"
         >
           2018
         </div>
         <div
-          className={selectedYear === 2019 ? "active-option" : "filter-option"}
+          className={selectedYear === 2019 ? "active" : "filter"}
           id="2019"
         >
           2019
         </div>
         <div
-          className={selectedYear === 2020 ? "active-option" : "filter-option"}
+          className={selectedYear === 2020 ? "active" : "filter"}
           id="2020"
         >
           2020
         </div>
       </div>
 
-      <div id="car-list">
+      <div className="cars">
         {filteredList.map((item, index) => (
-          <div className="car-item" key={index}>
+          <div className="car" key={index}>
             <div className="car-name">{`Name: ${item.name}`}</div>
             <div className="car-year">{`Year: ${item.year}`}</div>
-            <img className="car-image" src={item.url} alt="car-img" />
+            <img className="image" src={item.url} alt="car-img" />
           </div>
         ))}
       </div>

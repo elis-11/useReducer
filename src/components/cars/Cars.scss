@@ -6,28 +6,43 @@
     margin-top: 10rem;
     height: 80vh;
     font-size: 20px;
-  #year-options {
+  .year {
     display: flex;
     gap: 10px;
     margin: 10px;
   }
-  .car-image {
-    width: 200px;
-    height: 180px;
+  .brand-filter {
+    display: flex;
+    margin: 15px;
   }
-  #car-list {
+  .brand-input {
+    width: 80px;
+    margin: 0 10px;
+    height: 30px;
+  }
+  .filter,
+  .active {
+    padding: 10px 20px;
+    min-width: 50px;
+    border-radius: 2rem;
+  }
+  .filter:hover,
+  .active {
+    background-color: #48b393;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: all 0.1s;
+  }
+
+  .cars {
     display: grid;
     gap: 20px;
     min-height: 480px;
     grid-template-columns: repeat(3, 1fr);
   }
-  .car-list {
-    display: grid;
-    gap: 20px;
-    min-height: 480px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .car-item {
+  .car {
     display: flex;
     height: 200px;
     flex-direction: column;
@@ -37,28 +52,9 @@
     gap: 5px;
     color: black;
   }
-  .filter-option,
-  .active-option {
-    padding: 10px 20px;
-    min-width: 50px;
-    border-radius: 2rem;
+  .image {
+    width: 200px;
+    height: 180px;
   }
-  .brand-filter {
-    display: flex;
-    margin: 15px;
-  }
-  #brand-input {
-    width: 80px;
-    margin: 0 10px;
-    height: 30px;
-  }
-  .filter-option:hover,
-  .active-option {
-    background-color: #48b393;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    transition: all 0.1s;
-  }
+
   }
