@@ -1,0 +1,26 @@
+[
+    {
+        "value": "",
+        "label": "All Genre"
+      },
+      {
+        "value": "History",
+        "label": "History"
+      },
+      {
+        "value": "Fantasy",
+        "label": "Fantasy"
+      },
+      {
+        "value": "Drama",
+        "label": "Drama"
+      },
+      {
+        "value": "War",
+        "label": "War"
+      },
+      {
+        "value": "Comedy",
+        "label": "Comedy"
+      }
+]

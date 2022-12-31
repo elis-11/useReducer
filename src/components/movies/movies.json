@@ -1,0 +1,57 @@
+[
+    {
+        "title": "The Godfather",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["War", "Drama"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?movie,godfather"
+      },  {
+        "title": "The Titanic",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["War", "Drama"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?titanic"
+      },  {
+        "title": "Leon",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["Fantasy", "Drama"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?leon"
+      },  {
+        "title": "Medusa",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["History", "Comedy"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?medusa"
+      },  {
+        "title": "Architecture",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["War", "Drama"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?architecture"
+      },  {
+        "title": "Comedy",
+        "year": "1972",
+        "runtime": "175 min",
+        "genre": ["History", "Comedy"],
+        "directors": "Francis Ford Coppola",
+        "actors": ["Marlon Brando", "Al Pacino", "James Caan", "Diane Keaton"],
+        "plot": "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
+        "posterUrl": "https://source.unsplash.com/200x200/?comedy"
+      }
+]

@@ -1,0 +1,12 @@
+.Movies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .movies{
+        display: flex;
+        flex-wrap: wrap;
+        .movie{
+            width: 25%;
+            margin: 1em;
+        }    }
+}
