@@ -21,3 +21,6 @@ text-decoration: none;
 color: white;
 font-size: 2rem;
 }
+a.active {
+  color: rgb(167, 135, 135);
+}
