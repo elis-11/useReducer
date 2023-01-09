@@ -2,6 +2,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    .buttons{
+        // .filter,
+        // .active {
+        //   padding: 10px 20px;
+        //   min-width: 50px;
+        //   border-radius: 2rem;
+        // }
+        // .filter:hover,
+        .active {
+          background-color: #48b393;
+          color: rgb(144, 52, 52);
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+        //   transition: all 0.1s;
+        }
+    }
     .cards{
         display: flex;
         flex-wrap: wrap;

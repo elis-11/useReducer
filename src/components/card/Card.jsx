@@ -20,7 +20,7 @@ export const Card = () => {
         <h1 className="">Our Menu</h1>
         <div className="buttons">
           {menuItems.map((item, id) => (
-            <button className="btn" key={id} onClick={() => filterItem(item)}>
+            <button className={filterItem === item ? "active" : "filter"} key={id} onClick={() => filterItem(item)}>
               {item}
             </button>
           ))}
@@ -35,10 +35,9 @@ export const Card = () => {
                 <img src={item.img} alt={item.title} className=" " />
                 <div className="body">
                   <div className="name">
-                    {item.title} &nbsp;&nbsp;&nbsp;&nbsp;--&nbsp;&nbsp;
-                    {item.price}
+                    {item.title} &nbsp;&nbsp;&nbsp;&nbsp;price:&nbsp;&nbsp;
+                    {item.price} €
                   </div>
-                  <div className="text">{item.desc}</div>
                 </div>
               </div>
             ))}

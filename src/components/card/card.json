@@ -3,80 +3,60 @@
         "id": "1",
         "title": "Poha",
         "category": "Breakfast",
-        "price": "$1",
-        "img": "https://c.ndtvimg.com/2021-08/loudr2go_aloo-poha_625x300_05_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
-        "desc": " Poha. Light, filling and easy to make."
-      },
+        "price": "18",
+        "img": "https://c.ndtvimg.com/2021-08/loudr2go_aloo-poha_625x300_05_August_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200"      },
       {
         "id": "2",
         "title": "Upma",
         "category": "Breakfast",
-        "price": "$1",
-        "img": "https://c.ndtvimg.com/2021-04/37hi8sl_rava-upma_625x300_17_April_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200",
-        "desc": " A quintessential South Indian Breakfast!"
-      },
+        "price": "11",
+        "img": "https://c.ndtvimg.com/2021-04/37hi8sl_rava-upma_625x300_17_April_21.jpg?im=FeatureCrop,algorithm=dnn,width=200,height=200"      },
       {
         "id": "3",
         "title": "Cheela",
         "category": "Breakfast",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,meat",
-        "desc": "A staple across Indian households."
-      },
+        "price": "14",
+        "img": "https://source.unsplash.com/200x200/?pizza,meat"      },
       {
         "id": "4",
         "title": "Channa Kulcha",
         "category": "Lunch",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,cheese",
-        "desc": "A classic dish that never goes out of style."
-      },
+        "price": "9",
+        "img": "https://source.unsplash.com/200x200/?pizza,cheese"      },
       {
         "id": "5",
         "title": "Egg Curry",
         "category": "Lunch",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,pepperoni",
-        "desc": "Eggs are a versatile food that can be cooked. "
-      },
+        "price": "1",
+        "img": "https://source.unsplash.com/200x200/?pizza,pepperoni"      },
       {
         "id": "6",
         "title": "Paneer Aachari",
         "category": "Lunch",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,margherita",
-        "desc": "Don't get intimidated by the list of ingredients."
-      },
+        "price": "15",
+        "img": "https://source.unsplash.com/200x200/?pizza,margherita"      },
       {
         "id": "7",
         "title": "Fish Fry",
         "category": "Dinner",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,greek",
-        "desc": "Get your daily dose of perfect protein."
-      },
+        "price": "17",
+        "img": "https://source.unsplash.com/200x200/?pizza,greek"      },
       {
         "id": "8",
         "title": "Dum Alloo",
         "category": "Dinner",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,detroit",
-        "desc": "Your family will thank you for this fantastic."
-      },
+        "price": "21",
+        "img": "https://source.unsplash.com/200x200/?pizza,detroit"      },
       {
         "id": "9",
         "title": "Malai Kofta",
         "category": "Dinner",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,cheese",
-        "desc": "A rich gravy made of khus khus, coconut and milk."
-      },
+        "price": "1",
+        "img": "https://source.unsplash.com/200x200/?pizza,cheese"      },
       {
         "id": "10",
         "title": "Malai Kofta",
         "category": "Snaks",
-        "price": "$1",
-        "img": "https://source.unsplash.com/200x200/?pizza,veggie",
-        "desc": "A rich gravy made of khus khus, coconut and milk ."
-      }
+        "price": "18",
+        "img": "https://source.unsplash.com/200x200/?pizza,veggie"      }
     ]
