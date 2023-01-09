@@ -1,25 +1,32 @@
 import coffeesJson from "../assets/coffees.json";
 
 export const initialState = {
-  feedbacks: [{ _id: "i1", email: "elis@gmail.com", text: "I like it!" }],
+  feedbacks: (JSON.parse(localStorage.getItem('feedbacks')) || []),
   coffees: coffeesJson,
   savedCoffee: undefined,
   message: "",
   arr: [],
   counter: 1,
-  todos: [
-    {
-      _id: "t1",
-      title: "Learning",
-      description: "Javascript",
-    },
-  ],
+  items: [],
+  todosReducer: (JSON.parse(localStorage.getItem('todosReducer')) || []),
 };
 
 export const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (action.type) {
+    case "ADD_ITEM": {
+      return {
+       ...state,
+        items: [...state.items, action.payload],
+      };
+    }
+    case "DEL_ITEM": {
+      return {
+        ...state,
+        items: state.items.filter(item => item.id!== action.payload)
+      }
+    }
     case "feedback": {
       return {
         ...state,
@@ -29,10 +36,15 @@ export const reducer = (state, action) => {
     case "addTodo": {
       return {
         ...state,
-        todos: [...state.todos, payload]
-      }
+        todosReducer: [...state.todosReducer, payload],
+      };
     }
-
+      case "removeTodo": {
+      return {
+        ...state,
+        todosReducer: [state.todosReducer, payload],
+      };
+    }
     case "selectedCoffee":
       console.log(action.payload);
       return {

@@ -15,16 +15,15 @@ export const Cars = () => {
     if (!selectedBrand) {
       return filteredData;
     }
-    const filteredCars = filteredData.filter(
-      (car) => car.name.split(" ").indexOf(selectedBrand) !== -1
+    const filteredCars = filteredData.filter((car) =>
+      car.name.includes(selectedBrand)
     );
     return filteredCars;
   };
-    // Update seletedBrand state
-    const handleBrandChange = (event) => {
-      setSelectedBrand(event.target.value);
-    };
-  
+  // Update seletedBrand state
+  const handleBrandChange = (event) => {
+    setSelectedBrand(event.target.value);
+  };
 
   const filterByYear = (filteredData) => {
     // Avoid filter for null value
@@ -39,9 +38,9 @@ export const Cars = () => {
   };
 
   // Toggle seletedYear state
-  const handleYearChange = (event) => {
-    const inputYear = Number(event.target.id);
-
+  const handleYearChange = (year) => {
+    const inputYear = Number(year);
+    console.log(year);
     if (inputYear === selectedYear) {
       setSelectedYear("");
     } else {
@@ -53,7 +52,6 @@ export const Cars = () => {
     let filteredData = filterByBrand(carList);
     filteredData = filterByYear(filteredData);
     setFilteredList(filteredData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedBrand, selectedYear]);
 
   return (
@@ -72,27 +70,17 @@ export const Cars = () => {
         </select>
       </div>
       <div>Filter by Year</div>
-      <div className="year" onClick={handleYearChange}>
-        <div
-          className={selectedYear === 2018 ? "active" : "filter"}
-          id="2018"
-        >
-          2018
-        </div>
-        <div
-          className={selectedYear === 2019 ? "active" : "filter"}
-          id="2019"
-        >
-          2019
-        </div>
-        <div
-          className={selectedYear === 2020 ? "active" : "filter"}
-          id="2020"
-        >
-          2020
-        </div>
+      <div className="year">
+        {[2018, 2019, 2020].map((year) => (
+          <div
+            key={year}
+            onClick={() => handleYearChange(year)}
+            className={selectedYear === year ? "active" : "filter"}
+          >
+            {year}
+          </div>
+        ))}
       </div>
-
       <div className="cars">
         {filteredList.map((item, index) => (
           <div className="car" key={index}>

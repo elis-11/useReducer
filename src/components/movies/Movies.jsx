@@ -1,18 +1,18 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import allMovies from "./movies.json";
 import genreOptions from "./genreOptions.json";
 import "./Movies.scss";
 
 export const Movies = () => {
   const [genre, setGenre] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchMovie, setSearchMovie] = useState("");
   const [movies, setMovies] = useState("");
 
-  let filteredMovies = movies
+  // let filteredMovies = movies;
 
-  filteredMovies = useMemo(() => {
+  const filteredMovies = useMemo(() => {
     if (genre === "") {
-      if (searchTerm === "") {
+      if (searchMovie === "") {
         return allMovies;
       } else {
         return allMovies.filter((movie) => {
@@ -22,7 +22,7 @@ export const Movies = () => {
             `${movie.directors.toLowerCase()}` +
             `${movie.actors.join("").toLowerCase()}` +
             `${movie.plot.toLowerCase()}`;
-          return searchFields.includes(searchTerm.toLowerCase());
+          return searchFields.toLowerCase().includes(searchMovie.toLowerCase());
         });
       }
     }
@@ -30,46 +30,49 @@ export const Movies = () => {
       const movieGenre = movie.genre.map((val) => val.toLowerCase());
       return movieGenre.includes(genre);
     });
-  }, [genre, searchTerm]);
+  }, [genre, searchMovie]);
+  console.log(filteredMovies)
 
   useEffect(() => {
-    if (searchTerm !== "") {
+    if (searchMovie !== "") {
       setGenre("");
     }
-  }, [searchTerm]);
-
+  }, [searchMovie]);
+  
   const changeCategory = (e) => {
-    setGenre(e.target.value);
-
-    const filterMovies = filteredMovies.filter((movie) =>
-      movie.genre.includes(filteredMovies)
-    );
-    setMovies(filterMovies);
-  };
+    setGenre(e.target.value)
+    
+    const filterMovies = filteredMovies.filter((movie) => movie.genres.includes(e.target.value))
+    setMovies(filterMovies)
+    console.log(setMovies)
+  }
+  // Todo ↓
+  console.log(changeCategory)
 
   return (
     <div className="Movies">
-      <h1 className="text-xl font-bold my-6">
+      <h1 className="header">
         Top 100 Greatest Movies of All Time
       </h1>
-      <form className="flex flex-col w-72">
-        <select
-          className="px-2 py-1 border w-40"
-          value={genre}
-          onChange={changeCategory}
-        >
-          {genreOptions.map((option, i) => (
-            <option className="py-2" value={option.value} key={i}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+      <div
+        className="genre"
+        value={genre}
+        // onChange={e=>setGenre(e.target.value)}
+        onChange={changeCategory}
+      >
+        {genreOptions.map((option, i) => (
+          <button className="btn" value={option.value} key={i}>
+            {option.label}
+          </button>
+        ))}
+      </div>
+      <form className="">
         <input
           className="border p-1 px-3 my-3"
           name="searchMovie"
           placeholder="Search Movie"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchMovie}
+          onChange={(e) => setSearchMovie(e.target.value)}
         />
       </form>
 

@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { initialState, reducer } from "../reducer";
 import style from "./Coffees.module.css";
 
@@ -8,6 +8,10 @@ export const Coffees = () => {
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+
+  useEffect(()=> {
+    localStorage.setItem('feedbacks', JSON.stringify(state.feedbacks))
+  }, [state.feedbacks])
 
   const updateAmount = (amount) => {
     setAmount(Number(amount));

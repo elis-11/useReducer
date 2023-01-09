@@ -1,16 +1,29 @@
-.root{
-    display: flex;
-    flex-direction: column;
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
 .form {
-    margin: 2rem 0;
+  margin: 2rem 0;
+  width: 90%;
 }
-.todos{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+input {
+    height: 2.5em;
 }
-.todo{
-margin: .2rem;
+button {
+    height: 3em;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  padding: 1em;
+  border: 1px solid white;
+  width: 90%;
 }

@@ -8,6 +8,7 @@ import { Card } from "./components/card/Card";
 import { Cars2 } from "./components/cars2/Cars2";
 import { CarsNew } from "./components/carsnew/CarsNew";
 import { Movies } from "./components/movies/Movies";
+import { New } from "./components/new/New";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <NavLink to='/cars2'>Cars2</NavLink>
         <NavLink to='/carsnew'>CarsNew</NavLink>
         <NavLink to='/movies'>Movies</NavLink>
+        <NavLink to='/new'>New</NavLink>
       </nav>
       <Routes>
         <Route path="" element={<Coffees/>} />
@@ -29,6 +31,7 @@ function App() {
         <Route path="cars" element={<Cars/>} />
         <Route path="card" element={<Card/>} />
         <Route path="cars2" element={<Cars2/>} />
+        <Route path="new" element={<New/>} />
         <Route path="movies" element={<Movies/>} />
         <Route path="carsnew" element={<CarsNew/>} />
       </Routes>

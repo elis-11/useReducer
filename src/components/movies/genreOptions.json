@@ -4,23 +4,23 @@
         "label": "All Genre"
       },
       {
-        "value": "History",
+        "value": "history",
         "label": "History"
       },
       {
-        "value": "Fantasy",
+        "value": "fantasy",
         "label": "Fantasy"
       },
       {
-        "value": "Drama",
+        "value": "drama",
         "label": "Drama"
       },
       {
-        "value": "War",
+        "value": "war",
         "label": "War"
       },
       {
-        "value": "Comedy",
+        "value": "comedy",
         "label": "Comedy"
       }
 ]

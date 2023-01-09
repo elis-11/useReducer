@@ -1,18 +1,23 @@
-import { useReducer, useState } from "react";
-// import { useLocalStorage } from "../../useLocalStorage";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { initialState, reducer } from "../reducer";
 import style from "./Todo.module.css";
+import { FaTrashAlt } from "react-icons/fa";
 
 export const Todo = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { todos, message } = state;
+  const { todosReducer, message } = state;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const inputRef = useRef();
+
+  useEffect(() => {
+    localStorage.setItem("todosReducer", JSON.stringify(state.todosReducer));
+  }, [state.todosReducer]);
 
   const addTodo = (e) => {
     e.preventDefault();
     const todoNew = {
-      _id: Date.now().toString(),
+      id: Date.now().toString(),
       title: title,
       description: description,
     };
@@ -22,30 +27,42 @@ export const Todo = () => {
     });
     setTitle("");
     setDescription("");
+    inputRef.current.focus();
+  };
+
+  const removeTodo = (id) => {
+    dispatch({
+      type: "removeTodo",
+      payload: id,
+    });
   };
 
   return (
     <div className={style.root}>
       <form onSubmit={addTodo} className={style.form}>
         <input
+          ref={inputRef}
           type="text"
           placeholder="title"
           value={title}
-          onChange={e=>setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
           placeholder="description"
           value={description}
-          onChange={e=>setDescription(e.target.value)}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <button type="submit">Add</button>
       </form>
-      <div className={style.todos}>
-        {todos.map((todo) => (
-          <div key={todo._id} className={style.todo}>
-            <span className="title">{todo.title}</span>{" "}
-            <span className="description">{todo.description}</span>
+      <div className={style.todosReducer}>
+        {todosReducer.map((todo, index) => (
+          <div key={todo.id} className={style.todo}>
+            <div className="title">
+              {index + 1}: {todo.title}
+            </div>
+            <div className="description">{todo.description}</div>
+            <FaTrashAlt role="button" onClick={() => removeTodo(todo.id)} />
           </div>
         ))}
       </div>
