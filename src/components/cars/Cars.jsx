@@ -6,7 +6,7 @@ export const Cars = () => {
   // Array of all car objects
   const carList = carsJson;
   // List of all cars satisfing all the filters
-  const [filteredList, setFilteredList] = useState(carList);
+  const [cars, setCars] = useState(carList);
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedYear, setSelectedYear] = useState();
 
@@ -19,6 +19,13 @@ export const Cars = () => {
       car.name.includes(selectedBrand)
     );
     return filteredCars;
+    
+    // if (!selectedBrand) {
+    //   const filteredCars = filteredData.filter((car) =>
+    //   car.name.includes(selectedBrand)
+    //   );
+    //   return filteredCars;
+    // }
   };
   // Update seletedBrand state
   const handleBrandChange = (event) => {
@@ -30,7 +37,6 @@ export const Cars = () => {
     if (!selectedYear) {
       return filteredData;
     }
-
     const filteredCars = filteredData.filter(
       (car) => car.year === selectedYear
     );
@@ -51,7 +57,7 @@ export const Cars = () => {
   useEffect(() => {
     let filteredData = filterByBrand(carList);
     filteredData = filterByYear(filteredData);
-    setFilteredList(filteredData);
+    setCars(filteredData);
   }, [selectedBrand, selectedYear]);
 
   return (
@@ -82,7 +88,7 @@ export const Cars = () => {
         ))}
       </div>
       <div className="cars">
-        {filteredList.map((item, index) => (
+        {cars.map((item, index) => (
           <div className="car" key={index}>
             <div className="car-name">{`Name: ${item.name}`}</div>
             <div className="car-year">{`Year: ${item.year}`}</div>
