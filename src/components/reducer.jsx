@@ -1,14 +1,14 @@
 import coffeesJson from "../assets/coffees.json";
 
 export const initialState = {
-  feedbacks: (JSON.parse(localStorage.getItem('feedbacks')) || []),
+  feedbacks: JSON.parse(localStorage.getItem("feedbacks")) || [],
   coffees: coffeesJson,
   savedCoffee: undefined,
   message: "",
   arr: [],
   counter: 1,
   items: [],
-  todosReducer: (JSON.parse(localStorage.getItem('todosReducer')) || []),
+  todosReducer: JSON.parse(localStorage.getItem("todosReducer")) || [],
 };
 
 export const reducer = (state, action) => {
@@ -17,15 +17,15 @@ export const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM": {
       return {
-       ...state,
-        items: [...state.items, action.payload],
+        ...state,
+        items: [...state.items, payload],
       };
     }
-    case "DEL_ITEM": {
+    case "DELETE_ITEM": {
       return {
         ...state,
-        items: state.items.filter(item => item.id!== action.payload)
-      }
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
     }
     case "feedback": {
       return {
@@ -39,7 +39,7 @@ export const reducer = (state, action) => {
         todosReducer: [...state.todosReducer, payload],
       };
     }
-      case "removeTodo": {
+    case "removeTodo": {
       return {
         ...state,
         todosReducer: [state.todosReducer, payload],
