@@ -10,9 +10,6 @@ export const Todo = () => {
   const [description, setDescription] = useState("");
   const inputRef = useRef();
 
-
-  
-
   useEffect(() => {
     localStorage.setItem("todosReducer", JSON.stringify(state.todosReducer));
   }, [state.todosReducer]);
@@ -24,10 +21,6 @@ export const Todo = () => {
       title: title,
       description: description,
     };
-
-
-
-
     dispatch({
       type: "addTodo",
       payload: todoNew,
@@ -43,11 +36,6 @@ export const Todo = () => {
       payload: id,
     });
   };
-
-
-
-  
-
   return (
     <div className={style.root}>
       <form onSubmit={addTodo} className={style.form}>
