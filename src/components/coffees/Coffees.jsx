@@ -9,9 +9,9 @@ export const Coffees = () => {
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
-  useEffect(()=> {
-    localStorage.setItem('feedbacks', JSON.stringify(state.feedbacks))
-  }, [state.feedbacks])
+  useEffect(() => {
+    localStorage.setItem("feedbacks", JSON.stringify(state.feedbacks));
+  }, [state.feedbacks]);
 
   const updateAmount = (amount) => {
     setAmount(Number(amount));
@@ -70,8 +70,8 @@ export const Coffees = () => {
         buy now!
       </button>
       <div className="message">{message}</div>
-      
-        {/* FEEDBACK */}
+
+      {/* FEEDBACK */}
       <form onSubmit={onFeedback}>
         <input
           className={style.feedback}
@@ -87,7 +87,10 @@ export const Coffees = () => {
           onChange={(e) => setText(e.target.value)}
           className={style.feedback}
         />
-        <button className={style.send} type="submit"> Send feedback</button>
+        <button className={style.send} type="submit">
+          {" "}
+          Send feedback
+        </button>
         <div>
           {feedbacks.map((feedback) => (
             <div className={style.feedbacks} key={feedback._id}>

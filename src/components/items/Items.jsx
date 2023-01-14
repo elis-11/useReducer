@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import { initialState, reducer } from "../reducer";
+import style from "../todo/Todo.module.css";
 
 export const Items = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -24,8 +25,8 @@ export const Items = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={addItem}>
+    <div className={style.root}>
+      <form onSubmit={addItem} className={style.form}>
         <input
           type="text"
           value={title}
@@ -41,12 +42,12 @@ export const Items = () => {
         {/* <button onClick={addItem}>Add</button> */}
         <button type="submit">Add</button>
       </form>
-      <div className="items">
+      <div className={style.todoReducer}>
         {items.map((item) => (
-          <div className="item" key={item.id}>
+          <div className={style.todo} key={item.id}>
             <div className="title">{item.title}</div>
             <div className="description">{item.description}</div>
-            <button onClick={() => deleteItem(item.id)}>x</button>
+            <button className={style.delete} onClick={() => deleteItem(item.id)}>x</button>
           </div>
         ))}
       </div>

@@ -23,7 +23,13 @@ button {
   display: flex;
   justify-content: space-between;
   margin: 0 1rem;
-  padding: 1em;
+  padding: .5em;
   border: 1px solid white;
   width: 90%;
+}
+.delete{
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
