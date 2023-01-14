@@ -24,6 +24,10 @@ export const Todo = () => {
       title: title,
       description: description,
     };
+
+
+
+
     dispatch({
       type: "addTodo",
       payload: todoNew,
@@ -39,6 +43,10 @@ export const Todo = () => {
       payload: id,
     });
   };
+
+
+
+  
 
   return (
     <div className={style.root}>
