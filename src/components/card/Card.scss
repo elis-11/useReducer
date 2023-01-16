@@ -3,20 +3,33 @@
     flex-direction: column;
     justify-content: space-between;
     .buttons{
-        // .filter,
-        // .active {
-        //   padding: 10px 20px;
-        //   min-width: 50px;
-        //   border-radius: 2rem;
-        // }
-        // .filter:hover,
         .active {
-          background-color: #48b393;
-          color: rgb(144, 52, 52);
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-        //   transition: all 0.1s;
+          padding: 10px 20px;
+          min-width: 50px;
+          border-radius: 2rem;
+          background-color: #76807d;
+
+          &.active {
+              background-color: #48b393;
+              color: rgb(144, 52, 52);
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              transition: all 0.1s;
+            }
+        }
+        .filter{
+          padding: 10px 20px;
+          min-width: 50px;
+          border-radius: 2rem;
+          &:hover{
+              background-color: #48b393;
+              color: rgb(144, 52, 52);
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              transition: all 0.1s;
+            }
         }
     }
     .cards{

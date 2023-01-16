@@ -6,9 +6,9 @@ export const Card = () => {
   const [items, setItems] = useState(menuJson);
   const menuItems = [...new Set(menuJson.map((item) => item.category))];
 
-  const filterItem = (curcat) => {
-    const newItem = menuJson.filter((newVal) => {
-      return newVal.category === curcat;
+  const filterItems = (current) => {
+    const newItem = menuJson.filter((item) => {
+      return item.category === current;
       // comparing category for displaying data
     });
     setItems(newItem);
@@ -16,17 +16,20 @@ export const Card = () => {
 
   return (
     <div className="Card">
-      <div className="header">
         <h1 className="">Our Menu</h1>
         <div className="buttons">
           {menuItems.map((item, id) => (
-            <button className={filterItem === item ? "active" : "filter"} key={id} onClick={() => filterItem(item)}>
+            <div
+              className={filterItems === item ? "active" : "filter"}
+              key={id}
+              onClick={() => filterItems(item)}
+            >
               {item}
-            </button>
+            </div>
           ))}
-          <button className="btn" onClick={() => setItems(menuJson)}>
+          <div onClick={() => setItems(menuJson)} >
             All
-          </button>
+          </div>
         </div>
         <div className="">
           <div className="cards">
@@ -34,8 +37,9 @@ export const Card = () => {
               <div className="card" key={item.id}>
                 <img src={item.img} alt={item.title} className=" " />
                 <div className="body">
-                  <div className="name">
-                    {item.title} &nbsp;&nbsp;&nbsp;&nbsp;price:&nbsp;&nbsp;
+                  <div className="name">{item.title}</div>
+                  <div>
+                    price:
                     {item.price} €
                   </div>
                 </div>
@@ -44,6 +48,5 @@ export const Card = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };

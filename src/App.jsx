@@ -13,6 +13,7 @@ import { Items } from "./components/items/Items";
 function App() {
   return (
     <div className="App">
+      <h2>Use-Reducer</h2>
       <nav className="nav">
         <NavLink to='/'>Coffees</NavLink>
         <NavLink to='/count'>Count</NavLink>
