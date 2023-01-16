@@ -1,11 +1,11 @@
 .Cars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10rem;
-    height: 80vh;
-    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  height: 80vh;
+  font-size: 20px;
   .year {
     display: flex;
     gap: 10px;
@@ -56,5 +56,4 @@
     width: 200px;
     height: 180px;
   }
-
-  }
+}

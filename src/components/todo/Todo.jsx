@@ -56,7 +56,7 @@ export const Todo = () => {
       </form>
       <div className={style.todosReducer}>
         {todosReducer.map((todo, index) => (
-          <div key={todo.id} className={style.todo}>
+          <div key={index} className={style.todo}>
             <div className="title">
               {index + 1}: {todo.title}
             </div>

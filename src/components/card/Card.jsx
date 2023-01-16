@@ -27,9 +27,6 @@ export const Card = () => {
               {item}
             </div>
           ))}
-          <div onClick={() => setItems(menuJson)} >
-            All
-          </div>
         </div>
         <div className="">
           <div className="cards">
