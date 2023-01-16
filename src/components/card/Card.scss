@@ -11,7 +11,7 @@
           background-color: #76807d;
 
           &.active {
-              background-color: #48b393;
+              background-color: #434947;
               color: rgb(144, 52, 52);
               cursor: pointer;
               display: flex;
@@ -37,10 +37,11 @@
         display: flex;
         flex-wrap: wrap;
         .card{
-            width: 20%;
-            height: 400px;
-            margin: 2rem;
+            width: 23%;
+            height: 13rem;
+            margin: 1rem;
             padding: 0.3rem;
+            border: 1px solid white
         }
     }
 }

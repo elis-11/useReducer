@@ -1,6 +1,6 @@
 import { useState } from "react";
 import carsData from "./cars.json";
-import "./Cars.scss";
+import "./CarsNew.scss";
 
 export const CarsNew =() => {
   const [cars, setCars] = useState(carsData);
@@ -38,7 +38,8 @@ export const CarsNew =() => {
   }
 
   return (
-    <div className="App">
+    <div className="Cars">
+      <h2>Cars-New</h2>
       <div className="search">
         <div className="input">
           <h4>Input:</h4>

@@ -42,6 +42,7 @@ export const Coffees = () => {
 
   return (
     <div className={style.root}>
+      <h2>Coffees</h2>
       <div className={style.coffees}>
         {coffees.map((coffee) => (
           <div

@@ -62,6 +62,7 @@ export const Cars = () => {
 
   return (
     <div className="Cars">
+      <h2>Cars</h2>
       <div className="brand-filter">
         <div>Filter by Brand :</div>
         <select

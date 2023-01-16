@@ -26,6 +26,7 @@ export const Items = () => {
 
   return (
     <div className={style.root}>
+      <h2 style={{color: 'gold'}}>Items</h2>
       <form onSubmit={addItem} className={style.form}>
         <input
           type="text"

@@ -51,9 +51,10 @@ export const Movies = () => {
 
   return (
     <div className="Movies">
-      <h1 className="header">
+      <h2 style={{color: 'gray'}}>Movies</h2>
+      <h2 className="header">
         Top 100 Greatest Movies of All Time
-      </h1>
+      </h2>
       <div
         className="genre"
         value={genre}

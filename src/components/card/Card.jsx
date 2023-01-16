@@ -16,7 +16,8 @@ export const Card = () => {
 
   return (
     <div className="Card">
-        <h1 className="">Our Menu</h1>
+      <h2>Card</h2>
+        <h2 className="">Our Menu</h2>
         <div className="buttons">
           {menuItems.map((item, id) => (
             <div

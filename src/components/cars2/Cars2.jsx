@@ -25,9 +25,9 @@ export const Cars2 = () => {
   // YEAR
   const filteredYear = () => {
     const result = cars.filter((car) => {
-      return car.year === selectedYear
-    })
-    return result
+      return car.year === selectedYear;
+    });
+    return result;
     console.log(setSelectedYear);
     setSelectedYear(selectedYear);
   };
@@ -35,34 +35,44 @@ export const Cars2 = () => {
 
   return (
     <div className="Cars">
-        <div className="brand-filter">
+      <h2>Cars-2</h2>
+      <div className="brand-filter">
         <div>Filter by Brand :</div>
-          <select className="brand-input" onChange={handleBrandChange}>
-            <option value="">All</option>
-            <option value="BMW">BMW</option>
-            <option value="VW">VW</option>
-            <option value="Audi">Audi</option>
-          </select>
-        </div>
-        <div>Filter by Year</div>
+        <select className="brand-input" onChange={handleBrandChange}>
+          <option value="">All</option>
+          <option value="BMW">BMW</option>
+          <option value="VW">VW</option>
+          <option value="Audi">Audi</option>
+        </select>
+      </div>
+      <div>Filter by Year</div>
 
-        <div className="year">
-          <div
-            className={selectedYear === "" ? "active" : "filter"}
-            onClick={() => setSelectedYear(selectedYear)}
-          >
-            All
-          </div>
-          <div className={selectedYear === 2018 ? "active" : "filter"} onClick={() => filteredYear("2018")}>
-            2018
-          </div>
-          <div className={selectedYear === 2019 ? "active" : "filter"} onClick={() => filteredYear("2019")}>
-            2019
-          </div>
-          <div className={selectedYear === 2020 ? "active" : "filter"} onClick={() => filteredYear("2020")}>
-            2020
-          </div>
+      <div className="year">
+        <div
+          className={selectedYear === "" ? "active" : "filter"}
+          onClick={() => setSelectedYear(selectedYear)}
+        >
+          All
         </div>
+        <div
+          className={selectedYear === 2018 ? "active" : "filter"}
+          onClick={() => filteredYear("2018")}
+        >
+          2018
+        </div>
+        <div
+          className={selectedYear === 2019 ? "active" : "filter"}
+          onClick={() => filteredYear("2019")}
+        >
+          2019
+        </div>
+        <div
+          className={selectedYear === 2020 ? "active" : "filter"}
+          onClick={() => filteredYear("2020")}
+        >
+          2020
+        </div>
+      </div>
 
       <div className="cars">
         {filteredCars.map((car) => (
