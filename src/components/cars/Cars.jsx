@@ -32,6 +32,17 @@ export const Cars = () => {
     setSelectedBrand(event.target.value);
   };
 
+    // Toggle seletedYear state
+    const handleYearChange = (year) => {
+      const inputYear = Number(year);
+      console.log(year);
+      if (inputYear === selectedYear) {
+        setSelectedYear("");
+      } else {
+        setSelectedYear(inputYear);
+      }
+    };  
+
   const filterByYear = (filteredData) => {
     // Avoid filter for null value
     if (!selectedYear) {
@@ -41,17 +52,6 @@ export const Cars = () => {
       (car) => car.year === selectedYear
     );
     return filteredCars;
-  };
-
-  // Toggle seletedYear state
-  const handleYearChange = (year) => {
-    const inputYear = Number(year);
-    console.log(year);
-    if (inputYear === selectedYear) {
-      setSelectedYear("");
-    } else {
-      setSelectedYear(inputYear);
-    }
   };
 
   useEffect(() => {
