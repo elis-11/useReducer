@@ -18,7 +18,7 @@ export const CarsYear = () => {
 
   return (
     <div className="Cars">
-      <h2>Cars-UR</h2>
+      <h2>Cars-Year</h2>
       <div className="years">
         {years.map((year) => (
           <div key={year}

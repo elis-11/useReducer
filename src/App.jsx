@@ -9,6 +9,7 @@ import { CarsNew } from "./components/carsnew/CarsNew";
 import { Movies } from "./components/movies/Movies";
 import { Items } from "./components/items/Items";
 import { CarsYear } from "./components/carsyear/CarsYear";
+import { CarsUR } from "./components/carsur/CarsUR";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <NavLink to="/">Coffees-UR</NavLink>
         <NavLink to="/count">Count-UR</NavLink>
         <NavLink to="/todo">Todo-UR</NavLink>
+        <NavLink to="/carsur">Cars-UR</NavLink>
         <NavLink to="/items">Items-UR</NavLink>
         <NavLink to="/carsyear">Cars-Year</NavLink>
         <NavLink to="/cars">Cars</NavLink>
@@ -29,12 +31,13 @@ function App() {
           <Route path="" element={<Coffees />} />
           <Route path="count" element={<Count />} />
           <Route path="todo" element={<Todo />} />
+          <Route path="carsur" element={<CarsUR />} />
+          <Route path="items" element={<Items />} />
+          <Route path="carsyear" element={<CarsYear />} />
           <Route path="cars" element={<Cars />} />
           <Route path="card" element={<Card />} />
-          <Route path="carsyear" element={<CarsYear />} />
-          <Route path="items" element={<Items />} />
-          <Route path="movies" element={<Movies />} />
           <Route path="carsnew" element={<CarsNew />} />
+          <Route path="movies" element={<Movies />} />
         </Routes>
       </div>
     </div>
