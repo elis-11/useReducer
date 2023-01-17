@@ -14,17 +14,6 @@ export const CarsUR = () => {
     image: "https://i.pravatar.cc",
   });
 
-  const handleNewCarSubmit = (e) => {
-    e.preventDefault();
-    dispatch({ type: "ADD_CAR", payload: newCar });
-    setNewCar({
-      _id: "",
-      name: "",
-      year: 2020,
-      image: "https://i.pravatar.cc",
-    });
-  };
-
   const handleSelectedYear = (year) => {
     dispatch({ type: "FILTER_CAR_YEAR", payload: year });
   };
@@ -36,6 +25,21 @@ export const CarsUR = () => {
     console.log("filteredCars");
   }
   console.log("filteredCars", filteredCars);
+
+  const handleNewCarSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "ADD_CAR", payload: newCar });
+    setNewCar({
+      _id: "",
+      name: "",
+      year: 2020,
+      image: "https://i.pravatar.cc",
+    });
+  };
+
+  const deleteCar = (id) => {
+    dispatch({ type: "DELETE_CAR", payload: id });
+  };
 
   return (
     <div className="Cars">
@@ -78,6 +82,7 @@ export const CarsUR = () => {
             <div className="name">{car.name}</div>
             <div className="year">{car.year}</div>
             <img className="image" src={car.image} alt={car.name} />
+            <button onClick={()=>deleteCar(car._id)}>remove</button>
           </div>
         ))}
       </div>

@@ -24,11 +24,17 @@ export const reducer = (state, action) => {
         ...state,
         selectedYear: action.payload,
       };
-      case "ADD_CAR":
-        return {
-          ...state,
-          cars: [...state.cars, action.payload]
-        }
+    case "ADD_CAR":
+      return {
+        ...state,
+        cars: [...state.cars, action.payload],
+      };
+    case "DELETE_CAR":
+      return {
+        ...state,
+        cars: state.cars.filter((car) => car._id !== action.payload),
+        // items: state.items.filter((item) => item.id !== action.payload),
+      };
     case "selectedCoffee":
       console.log(action.payload);
       return {
@@ -86,5 +92,7 @@ export const reducer = (state, action) => {
         ...state,
         counter: state.counter - action.payload,
       };
+    default:
+      return state;
   }
 };
