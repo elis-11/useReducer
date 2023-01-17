@@ -10,8 +10,12 @@
 input {
     height: 2.5em;
 }
-button {
+.add {
     height: 3em;
+}
+.delete {
+    height: 3em;
+    background-color: transparent;
 }
 .todos {
   display: flex;
@@ -24,7 +28,8 @@ button {
   justify-content: space-between;
   margin: 0 1rem;
   padding: .5em;
-  border: 1px solid white;
+  place-items: center;
+  /* border: 1px solid white; */
   width: 90%;
 }
 .delete{

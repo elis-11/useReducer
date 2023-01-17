@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import { initialState, reducer } from "../reducer";
 import style from "../todo/Todo.module.css";
 
@@ -7,6 +7,7 @@ export const Items = () => {
   const { items } = state;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const inputRef = useRef()
 
   const addItem = (e) => {
     e.preventDefault();
@@ -16,10 +17,11 @@ export const Items = () => {
       description: description,
     };
     dispatch({ type: "ADD_ITEM", payload: newItem });
-
+    inputRef.current.focus()
     setTitle("");
     setDescription("");
   };
+
   const deleteItem = (id) => {
     dispatch({ type: "DELETE_ITEM", payload: id });
   };
@@ -29,6 +31,7 @@ export const Items = () => {
       <h2 style={{color: 'gold'}}>Items</h2>
       <form onSubmit={addItem} className={style.form}>
         <input
+        ref={inputRef}
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -41,9 +44,9 @@ export const Items = () => {
           placeholder="Description"
         />
         {/* <button onClick={addItem}>Add</button> */}
-        <button type="submit">Add</button>
+        <button className={style.add} type="submit">Add</button>
       </form>
-      <div className={style.todoReducer}>
+      <div className={style.todos}>
         {items.map((item) => (
           <div className={style.todo} key={item.id}>
             <div className="title">{item.title}</div>

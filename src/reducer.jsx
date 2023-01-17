@@ -9,7 +9,7 @@ export const initialState = {
   arr: [],
   counter: 1,
   items: [],
-  todosReducer: JSON.parse(localStorage.getItem("todosReducer")) || [],
+  todos: [],
   cars: carsJson,
   selectedYear: undefined,
   filteredYears: [2018, 2019, 2020],
@@ -35,6 +35,30 @@ export const reducer = (state, action) => {
         cars: state.cars.filter((car) => car._id !== action.payload),
         // items: state.items.filter((item) => item.id !== action.payload),
       };
+    case "ADD_ITEM": {
+      return {
+        ...state,
+        items: [...state.items, payload],
+      };
+    }
+    case "DELETE_ITEM": {
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
+    }
+    case "ADD_TODO": {
+      return {
+        ...state,
+        todos: [...state.todos, payload]
+      }
+    }
+    case "REMOVE_TODO": {
+      return {
+        ...state,
+        todos: state.todos.filter((item) => item.id !== action.payload)
+      }
+    }
     case "selectedCoffee":
       console.log(action.payload);
       return {
@@ -52,34 +76,10 @@ export const reducer = (state, action) => {
         ...state,
         message: payload,
       };
-    case "ADD_ITEM": {
-      return {
-        ...state,
-        items: [...state.items, payload],
-      };
-    }
-    case "DELETE_ITEM": {
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== action.payload),
-      };
-    }
     case "feedback": {
       return {
         ...state,
         feedbacks: [...state.feedbacks, payload],
-      };
-    }
-    case "addTodo": {
-      return {
-        ...state,
-        todosReducer: [...state.todosReducer, payload],
-      };
-    }
-    case "removeTodo": {
-      return {
-        ...state,
-        todosReducer: [state.todosReducer, payload],
       };
     }
     case "increment":
