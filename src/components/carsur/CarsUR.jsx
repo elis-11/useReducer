@@ -7,9 +7,26 @@ export const CarsUR = () => {
   const { cars, filteredYears, selectedYear } = state;
   console.log("cars", cars);
   console.log("filteredYears", filteredYears);
+  const [newCar, setNewCar] = useState({
+    _id: Date.now().toString(),
+    name: "",
+    year: 2020,
+    image: "https://i.pravatar.cc",
+  });
+
+  const handleNewCarSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "ADD_CAR", payload: newCar });
+    setNewCar({
+      _id: "",
+      name: "",
+      year: 2020,
+      image: "https://i.pravatar.cc",
+    });
+  };
 
   const handleSelectedYear = (year) => {
-    dispatch({ type: "FILTER_YEAR", payload: year });
+    dispatch({ type: "FILTER_CAR_YEAR", payload: year });
   };
   console.log("selectedYear", selectedYear);
   let filteredCars = cars;
@@ -34,6 +51,25 @@ export const CarsUR = () => {
             {year}
           </div>
         ))}
+      </div>
+
+      <div className="newCar">
+        <form onSubmit={handleNewCarSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={newCar.name}
+            onChange={(e) => setNewCar({ ...newCar, name: e.target.value })}
+          />
+          <input
+            type="number"
+            name="year"
+            value={newCar.year}
+            onChange={(e) => setNewCar({ ...newCar, year: e.target.value })}
+          />
+          <button type="submit">Add</button>
+        </form>
       </div>
 
       <div className="cars">

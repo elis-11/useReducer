@@ -19,11 +19,16 @@ export const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (action.type) {
-    case "FILTER_YEAR":
+    case "FILTER_CAR_YEAR":
       return {
         ...state,
         selectedYear: action.payload,
       };
+      case "ADD_CAR":
+        return {
+          ...state,
+          cars: [...state.cars, action.payload]
+        }
     case "selectedCoffee":
       console.log(action.payload);
       return {
