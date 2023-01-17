@@ -1,4 +1,5 @@
 import coffeesJson from "./assets/coffees.json";
+import Cars from './assets/cars.json'
 
 export const initialState = {
   feedbacks: JSON.parse(localStorage.getItem("feedbacks")) || [],
@@ -9,12 +10,30 @@ export const initialState = {
   counter: 1,
   items: [],
   todosReducer: JSON.parse(localStorage.getItem("todosReducer")) || [],
+  cars: Cars
 };
 
 export const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (action.type) {
+    case "selectedCoffee":
+      console.log(action.payload);
+      return {
+        ...state,
+        message:
+          "Selected: " +
+          action.payload.name +
+          " costs " +
+          action.payload.costs +
+          " €",
+        savedCoffee: action.payload,
+      };
+    case "newMessage":
+      return {
+        ...state,
+        message: payload,
+      };
     case "ADD_ITEM": {
       return {
         ...state,
@@ -45,23 +64,6 @@ export const reducer = (state, action) => {
         todosReducer: [state.todosReducer, payload],
       };
     }
-    case "selectedCoffee":
-      console.log(action.payload);
-      return {
-        ...state,
-        message:
-          "Selected: " +
-          action.payload.name +
-          " costs " +
-          action.payload.costs +
-          " €",
-        savedCoffee: action.payload,
-      };
-    case "newMessage":
-      return {
-        ...state,
-        message: payload,
-      };
     case "increment":
       return {
         ...state,
