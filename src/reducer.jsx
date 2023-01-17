@@ -7,7 +7,7 @@ export const initialState = {
   savedCoffee: undefined,
   message: "",
   arr: [],
-  counter: 1,
+  counter: 0,
   items: [],
   todos: JSON.parse(localStorage.getItem("todos")) || [],
   cars: carsJson,
@@ -33,7 +33,6 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cars: state.cars.filter((car) => car._id !== action.payload),
-        // items: state.items.filter((item) => item.id !== action.payload),
       };
     case "ADD_ITEM": {
       return {

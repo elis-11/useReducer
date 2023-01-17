@@ -22,11 +22,11 @@ export const Count = () => {
   return (
     <div>
       <h2>Count</h2>
-      <button onClick={() => dispatch(decrement(2))}>+ 2</button>
-      <button onClick={() => dispatch(decrement(1))}>+ 1</button>
+      <button onClick={() => dispatch(decrement(2))}>- 2</button>
+      <button onClick={() => dispatch(decrement(1))}>- 1</button>
       <span>{counter}</span>
-      <button onClick={() => dispatch(increment(1))}>- 1</button>
-      <button onClick={() => dispatch(increment(2))}>- 2</button>
+      <button onClick={() => dispatch(increment(1))}>+ 1</button>
+      <button onClick={() => dispatch(increment(2))}>+ 2</button>
     </div>
   );
 };
