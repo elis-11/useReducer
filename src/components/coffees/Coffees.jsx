@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
-import { initialState, reducer } from "../reducer";
+import { initialState, reducer } from "../../reducer";
 import style from "./Coffees.module.css";
 
 export const Coffees = () => {
@@ -28,16 +28,19 @@ export const Coffees = () => {
   const onFeedback = (e) => {
     e.preventDefault();
     const feedbackNew = {
-      _id: Date.now().toString(),
-      email: email,
-      text: text,
+      id: Date.now().toString(),
+      email,
+      text,
     };
     dispatch({
-      type: "feedback",
+      type: "ADD_FEEDBACK",
       payload: feedbackNew,
     });
     setEmail("");
     setText("");
+  };
+  const removeFeedback = (id) => {
+    dispatch({ type: "REMOVE_FEEDBACK", payload: id });
   };
 
   return (
@@ -46,14 +49,14 @@ export const Coffees = () => {
       <div className={style.coffees}>
         {coffees.map((coffee) => (
           <div
+          key={coffee.id}
+          className={style.coffee}
             onClick={() =>
               dispatch({
                 type: "selectedCoffee",
                 payload: coffee,
               })
             }
-            key={coffee._id}
-            className={style.coffee}
           >
             <img src={coffee.image} alt={coffee.name} />
             <div className="name">{coffee.name}</div>
@@ -93,10 +96,13 @@ export const Coffees = () => {
           Send feedback
         </button>
         <div>
-          {feedbacks.map((feedback) => (
-            <div className={style.feedbacks} key={feedback._id}>
-              <div className={style.item}>{feedback.email}</div>
+          {feedbacks.map((feedback, index) => (
+            <div className={style.feedbacks} key={feedback.id}>
+              <div className={style.item}>
+                {index + 1}: {feedback.email}
+              </div>
               <div className={style.item}>{feedback.text} </div>
+              <button onClick={() => removeFeedback(feedback.id)}>x</button>
             </div>
           ))}
         </div>

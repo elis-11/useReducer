@@ -82,7 +82,7 @@ export const CarsUR = () => {
             <div className="name">{car.name}</div>
             <div className="year">{car.year}</div>
             <img className="image" src={car.image} alt={car.name} />
-            <button onClick={()=>deleteCar(car._id)}>remove</button>
+            <button onClick={() => deleteCar(car._id)}>remove</button>
           </div>
         ))}
       </div>

@@ -34,29 +34,28 @@ export const reducer = (state, action) => {
         ...state,
         cars: state.cars.filter((car) => car._id !== action.payload),
       };
-    case "ADD_ITEM": {
+    case "ADD_ITEM":
       return {
         ...state,
         items: [...state.items, payload],
       };
-    }
-    case "DELETE_ITEM": {
+    case "DELETE_ITEM":
       return {
         ...state,
         items: state.items.filter((item) => item.id !== action.payload),
       };
-    }
-    case "ADD_TODO": {
+    case "ADD_TODO":
       return {
         ...state,
         todos: [...state.todos, payload],
       };
-    }
-    case "REMOVE_TODO": {
+    case "REMOVE_TODO":
       return {
         ...state,
         todos: state.todos.filter((item) => item.id !== action.payload),
       };
+    case "UPDATE_TODO": {
+      return {};
     }
     case "selectedCoffee":
       console.log(action.payload);
@@ -75,12 +74,18 @@ export const reducer = (state, action) => {
         ...state,
         message: payload,
       };
-    case "feedback": {
+    case "ADD_FEEDBACK":
       return {
         ...state,
         feedbacks: [...state.feedbacks, payload],
       };
-    }
+    case "REMOVE_FEEDBACK":
+      return {
+        ...state,
+        feedbacks: state.feedbacks.filter(
+          (feedback) => feedback.id !== action.payload
+        ),
+      };
     case "increment":
       return {
         ...state,

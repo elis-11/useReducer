@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer, useRef, useState } from "react";
 import { reducer, initialState } from "../../reducer";
-// import { initialState, reducer } from '../reducer'
 import style from "../todo/Todo.module.css";
 
 export const Todo = () => {
