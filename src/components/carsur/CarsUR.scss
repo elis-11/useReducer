@@ -5,11 +5,12 @@
   font-size: 20px;
   align-items: center;
   // border: 1px solid white;
-  .years {
+  .year {
     display: flex;
     gap: 10px;
     margin: 10px;
   }
+
   .filter,
   .active {
     padding: 10px 20px;
@@ -18,7 +19,7 @@
   }
   .filter:hover,
   .active {
-    background-color: #48b393;
+    background-color: #bdc7c4;
     color: white;
     cursor: pointer;
     display: flex;

@@ -1,5 +1,5 @@
 import coffeesJson from "./assets/coffees.json";
-import Cars from './assets/cars.json'
+import carsJson from "./assets/cars.json";
 
 export const initialState = {
   feedbacks: JSON.parse(localStorage.getItem("feedbacks")) || [],
@@ -10,13 +10,20 @@ export const initialState = {
   counter: 1,
   items: [],
   todosReducer: JSON.parse(localStorage.getItem("todosReducer")) || [],
-  cars: Cars
+  cars: carsJson,
+  selectedYear: undefined,
+  filteredYears: [2018, 2019, 2020],
 };
 
 export const reducer = (state, action) => {
   const { type, payload } = action;
 
   switch (action.type) {
+    case "FILTER_YEAR":
+      return {
+        ...state,
+        selectedYear: action.payload,
+      };
     case "selectedCoffee":
       console.log(action.payload);
       return {
