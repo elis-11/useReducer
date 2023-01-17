@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import { reducer, initialState } from "../../reducer";
 // import { initialState, reducer } from '../reducer'
 import style from "../todo/Todo.module.css";
@@ -9,6 +9,10 @@ export const Todo = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const inputRef = useRef()
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(state.todos));
+  }, [state.todos]);
 
   const addTodo = (e) => {
     e.preventDefault();

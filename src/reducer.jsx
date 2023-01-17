@@ -9,7 +9,7 @@ export const initialState = {
   arr: [],
   counter: 1,
   items: [],
-  todos: [],
+  todos: JSON.parse(localStorage.getItem("todos")) || [],
   cars: carsJson,
   selectedYear: undefined,
   filteredYears: [2018, 2019, 2020],
@@ -50,14 +50,14 @@ export const reducer = (state, action) => {
     case "ADD_TODO": {
       return {
         ...state,
-        todos: [...state.todos, payload]
-      }
+        todos: [...state.todos, payload],
+      };
     }
     case "REMOVE_TODO": {
       return {
         ...state,
-        todos: state.todos.filter((item) => item.id !== action.payload)
-      }
+        todos: state.todos.filter((item) => item.id !== action.payload),
+      };
     }
     case "selectedCoffee":
       console.log(action.payload);
