@@ -60,7 +60,6 @@ export const Coffees = () => {
           >
             <img src={coffee.image} alt={coffee.name} />
             <div className="name">{coffee.name}</div>
-            {/* <div className="costs">{coffee.costs}</div> */}
           </div>
         ))}
       </div>
