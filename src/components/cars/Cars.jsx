@@ -9,6 +9,7 @@ export const Cars = () => {
   const [cars, setCars] = useState(carList);
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedYear, setSelectedYear] = useState();
+  const years = [2018, 2019, 2020]
 
   const filterByBrand = (filteredData) => {
     // Avoid filter for empty string
@@ -18,14 +19,7 @@ export const Cars = () => {
     const filteredCars = filteredData.filter((car) =>
       car.name.includes(selectedBrand)
     );
-    return filteredCars;
-    
-    // if (!selectedBrand) {
-    //   const filteredCars = filteredData.filter((car) =>
-    //   car.name.includes(selectedBrand)
-    //   );
-    //   return filteredCars;
-    // }
+    return filteredCars;    
   };
   // Update seletedBrand state
   const handleBrandChange = (event) => {
@@ -78,7 +72,7 @@ export const Cars = () => {
       </div>
       <div>Filter by Year</div>
       <div className="year">
-        {[2018, 2019, 2020].map((year) => (
+        {years.map((year) => (
           <div
             key={year}
             onClick={() => handleYearChange(year)}
