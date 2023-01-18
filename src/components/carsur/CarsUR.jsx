@@ -13,18 +13,19 @@ export const CarsUR = () => {
     year: 2020,
     image: "https://i.pravatar.cc",
   });
+  console.log("newCar:", newCar)
 
   const handleSelectedYear = (year) => {
     dispatch({ type: "FILTER_CAR_YEAR", payload: year });
   };
   console.log("selectedYear", selectedYear);
   let filteredCars = cars;
+  console.log("filteredCars", filteredCars);
 
   if (selectedYear) {
     filteredCars = cars.filter((car) => car.year === selectedYear);
-    console.log("filteredCars");
   }
-  console.log("filteredCars", filteredCars);
+  console.log("filteredCars1", filteredCars);
 
   const handleNewCarSubmit = (e) => {
     e.preventDefault();

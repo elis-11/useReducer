@@ -16,10 +16,11 @@ export const Todo = () => {
   const addTodo = (e) => {
     e.preventDefault();
     const newTodo = {
-      id: new Date().toString(),
+      id: Date.now().toString(),
       title: title,
       description: description,
     };
+    console.log("newTodo:", newTodo);
     dispatch({ type: "ADD_TODO", payload: newTodo });
     setTitle("");
     setDescription("");

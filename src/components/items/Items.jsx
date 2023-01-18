@@ -12,10 +12,11 @@ export const Items = () => {
   const addItem = (e) => {
     e.preventDefault();
     const newItem = {
-      id: new Date().toString(),
+      id: Date.now().toString(),
       title: title,
       description: description,
     };
+    console.log("newItem:",newItem);
     dispatch({ type: "ADD_ITEM", payload: newItem });
     inputRef.current.focus()
     setTitle("");

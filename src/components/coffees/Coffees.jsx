@@ -8,6 +8,8 @@ export const Coffees = () => {
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+  console.log("feedbacks:", feedbacks)
+  console.log("coffees:", coffees)
 
   useEffect(() => {
     localStorage.setItem("feedbacks", JSON.stringify(state.feedbacks));
@@ -36,6 +38,7 @@ export const Coffees = () => {
       type: "ADD_FEEDBACK",
       payload: feedbackNew,
     });
+    console.log("feedbackNew:",feedbackNew)
     setEmail("");
     setText("");
   };
@@ -96,7 +99,7 @@ export const Coffees = () => {
         </button>
         <div>
           {feedbacks.map((feedback, index) => (
-            <div className={style.feedbacks} key={feedback.id}>
+            <div key={feedback.id} className={style.feedbacks} >
               <div className={style.item}>
                 {index + 1}: {feedback.email}
               </div>
