@@ -11,7 +11,8 @@ export const CarsUR = () => {
     _id: Date.now().toString(),
     name: "",
     year: 2020,
-    image: "https://i.pravatar.cc",
+    // image: "https://i.pravatar.cc",
+    image: "https://picsum.photos/100/57",
   });
   console.log("newCar:", newCar)
 
