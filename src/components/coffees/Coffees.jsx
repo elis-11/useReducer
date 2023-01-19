@@ -52,7 +52,7 @@ export const Coffees = () => {
       <div className={style.coffees}>
         {coffees.map((coffee) => (
           <div
-          key={coffee.id}
+          key={coffee._id}
           className={style.coffee}
             onClick={() =>
               dispatch({
