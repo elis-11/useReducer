@@ -17,12 +17,13 @@ export const CarsYear = () => {
 
   let filteredCars = cars;
   if (selectedYear) {
-    filteredCars = cars.filter((c) => c.year === selectedYear);
+    filteredCars = cars.filter((car) => car.year === selectedYear);
   }
 
   return (
     <div className="Cars">
       <h2>Cars-Year</h2>
+      
       <div className="years">
         <div onClick={() => clearSelectedYear()} className="filter">
           All

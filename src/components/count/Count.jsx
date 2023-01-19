@@ -22,6 +22,19 @@ export const Count = () => {
   return (
     <div>
       <h2>Count</h2>
+      <img src="https://picsum.photos/100" alt="photos" />
+      <img src="https://picsum.photos/seed/200/50" alt="photos" />
+      <img src="https://picsum.photos/seed/picsum/200/50" alt="photos" />
+      <img src="https://picsum.photos/100?blur" alt="photos" />
+      <img src="https://picsum.photos/100?blur=2" alt="photos" />
+      <img src="https://picsum.photos/100.jpg" alt="photos" />
+      <img src="https://picsum.photos/100?grayscale" alt="photos" />
+      <img src="https://picsum.photos/id/56/100" alt="photos" />
+      <img src="https://picsum.photos/id/52/100" alt="photos" />
+      <img src="https://picsum.photos/id/53/100" alt="photos" />
+      <img src="https://picsum.photos/100" alt="photos" />
+      <img src="https://picsum.photos/seed/picsum/100" alt="photos" />
+      <br />
       <button onClick={() => dispatch(decrement(2))}>- 2</button>
       <button onClick={() => dispatch(decrement(1))}>- 1</button>
       <span>{counter}</span>
