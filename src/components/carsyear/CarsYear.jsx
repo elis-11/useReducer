@@ -9,21 +9,30 @@ export const CarsYear = () => {
 
   // YEAR
   const handleSelectedYear = (year) => {
-    year === selectedYear ? setSelectedYear("") : setSelectedYear(year);
+    setSelectedYear(year);
   };
-  let filteredCars = cars
+  const clearSelectedYear = () => {
+    setSelectedYear("");
+  };
+
+  let filteredCars = cars;
   if (selectedYear) {
-    filteredCars = cars.filter(c => c.year === selectedYear)
+    filteredCars = cars.filter((c) => c.year === selectedYear);
   }
 
   return (
     <div className="Cars">
       <h2>Cars-Year</h2>
       <div className="years">
+        <div onClick={() => clearSelectedYear()} className="filter">
+          All
+        </div>
         {years.map((year) => (
-          <div key={year}
-          className={selectedYear === year ? 'active' : 'filter'}
-          onClick={() => handleSelectedYear(year)}>
+          <div
+            key={year}
+            className={selectedYear === year ? "active" : "filter"}
+            onClick={() => handleSelectedYear(year)}
+          >
             {year}
           </div>
         ))}
