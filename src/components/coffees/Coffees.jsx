@@ -1,9 +1,9 @@
 import { useEffect, useReducer, useState } from "react";
-import { initialState, reducer } from "../../reducer";
+import { initialState, coffeesReducer } from "../../reducer";
 import style from "./Coffees.module.css";
 
 export const Coffees = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(coffeesReducer, initialState);
   const { coffees, savedCoffee, message, feedbacks } = state;
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");

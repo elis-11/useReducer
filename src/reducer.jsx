@@ -57,6 +57,22 @@ export const reducer = (state, action) => {
     case "UPDATE_TODO": {
       return {};
     }
+    case "increment":
+      return {
+        ...state,
+        counter: state.counter + action.payload,
+      };
+    case "decrement":
+      return {
+        ...state,
+        counter: state.counter - action.payload,
+      };
+    default:
+      return state;
+  }
+};
+export const coffeesReducer = (state, action) => {
+  switch (action.type) {
     case "selectedCoffee":
       console.log(action.payload);
       return {
@@ -86,17 +102,8 @@ export const reducer = (state, action) => {
           (feedback) => feedback.id !== action.payload
         ),
       };
-    case "increment":
-      return {
-        ...state,
-        counter: state.counter + action.payload,
-      };
-    case "decrement":
-      return {
-        ...state,
-        counter: state.counter - action.payload,
-      };
-    default:
+          default:
       return state;
+
   }
 };
