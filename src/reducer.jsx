@@ -34,29 +34,14 @@ export const reducer = (state, action) => {
         ...state,
         cars: state.cars.filter((car) => car._id !== action.payload),
       };
-    case "ADD_ITEM":
-      return {
-        ...state,
-        items: [...state.items, payload],
-      };
-    case "DELETE_ITEM":
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== action.payload),
-      };
-    case "ADD_TODO":
-      return {
-        ...state,
-        todos: [...state.todos, payload],
-      };
-    case "REMOVE_TODO":
-      return {
-        ...state,
-        todos: state.todos.filter((item) => item.id !== action.payload),
-      };
-    case "UPDATE_TODO": {
-      return {};
-    }
+    default:
+      return state;
+  }
+};
+export const countReducer = (state, action) => {
+  const { type, payload } = action;
+
+  switch (action.type) {
     case "increment":
       return {
         ...state,
@@ -71,6 +56,28 @@ export const reducer = (state, action) => {
       return state;
   }
 };
+
+export const todoReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_TODO":
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    case "REMOVE_TODO":
+      return {
+        ...state,
+        todos: state.todos.filter((item) => item.id !== action.payload),
+      };
+    case "UPDATE_TODO": {
+      return {};
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
 export const coffeesReducer = (state, action) => {
   switch (action.type) {
     case "selectedCoffee":
@@ -102,8 +109,24 @@ export const coffeesReducer = (state, action) => {
           (feedback) => feedback.id !== action.payload
         ),
       };
-          default:
+    default:
       return state;
-
+  }
+};
+export const itemsReducer = (state, action) => {
+  // const { type, payload } = action;
+  switch (action.type) {
+    case "ADD_ITEM":
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+      };
+    case "DELETE_ITEM":
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
+    default:
+      return state;
   }
 };

@@ -1,8 +1,8 @@
 import { useReducer } from "react";
-import { initialState, reducer } from "../reducer";
+import { initialState, countReducer } from "../../reducer";
 
 export const Count = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(countReducer, initialState);
   const { counter } = state;
 
   const INCREMENT = "increment";
@@ -11,9 +11,9 @@ export const Count = () => {
   const increment = (payload) => {
     return {
       type: INCREMENT,
-      payload
-    }
-  }
+      payload,
+    };
+  };
   const decrement = (payload) => ({
     type: DECREMENT,
     payload,

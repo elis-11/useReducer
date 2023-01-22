@@ -1,9 +1,9 @@
 import { useReducer, useRef, useState } from "react";
-import { initialState, reducer } from "../reducer";
+import { initialState, itemsReducer } from "../../reducer";
 import style from "../todo/Todo.module.css";
 
 export const Items = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(itemsReducer, initialState);
   const { items } = state;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
