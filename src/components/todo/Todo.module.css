@@ -32,9 +32,9 @@ input {
   /* border: 1px solid white; */
   width: 90%;
 }
-.delete{
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
+  .delete{
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

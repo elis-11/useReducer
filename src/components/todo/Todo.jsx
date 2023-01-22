@@ -1,13 +1,14 @@
 import React, { useEffect, useReducer, useRef, useState } from "react";
-import { reducer, initialState } from "../../reducer";
+import { todoReducer, initialState } from "../../reducer";
 import style from "../todo/Todo.module.css";
+import { TodoActions } from "./TodoActions";
 
 export const Todo = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(todoReducer, initialState);
   const { todos } = state;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const inputRef = useRef()
+  const inputRef = useRef();
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(state.todos));
@@ -24,11 +25,7 @@ export const Todo = () => {
     dispatch({ type: "ADD_TODO", payload: newTodo });
     setTitle("");
     setDescription("");
-    inputRef.current.focus()
-  };
-
-  const removeTodo = (id) => {
-    dispatch({ type: "REMOVE_TODO", payload: id });
+    inputRef.current.focus();
   };
 
   return (
@@ -37,7 +34,7 @@ export const Todo = () => {
       <div className="addTodo">
         <form onSubmit={addTodo} className={style.form}>
           <input
-          ref={inputRef}
+            ref={inputRef}
             type="text"
             name="title"
             placeholder="Title"
@@ -57,17 +54,8 @@ export const Todo = () => {
         </form>
       </div>
       <div className={style.todos}>
-        {todos.map((todo, index) => (
-          <div key={todo.id} className={style.todo}>
-            <div className="title">{index + 1}: {" "}{todo.title}</div>
-            <div className="description">{todo.description}</div>
-            <button
-              className={style.delete}
-              onClick={() => removeTodo(todo.id)}
-            >
-              x
-            </button>
-          </div>
+        {todos.map((todo) => (
+          <TodoActions key={todo.id} dispatch={dispatch} todo={todo} />
         ))}
       </div>
     </div>
