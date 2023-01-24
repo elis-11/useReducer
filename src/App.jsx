@@ -10,6 +10,7 @@ import { Movies } from "./components/movies/Movies";
 import { Items } from "./components/items/Items";
 import { CarsYear } from "./components/carsyear/CarsYear";
 import { CarsUR } from "./components/carsur/CarsUR";
+import { Events } from "./events/Events";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <NavLink to="/card">Card</NavLink>
         <NavLink to="/carsnew">CarsNew</NavLink>
         <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/events">Events</NavLink>
       </nav>
       <div className="content">
         <Routes>
@@ -38,6 +40,7 @@ function App() {
           <Route path="card" element={<Card />} />
           <Route path="carsnew" element={<CarsNew />} />
           <Route path="movies" element={<Movies />} />
+          <Route path="events" element={<Events />} />
         </Routes>
       </div>
     </div>
