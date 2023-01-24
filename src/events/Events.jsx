@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export const Events = () => {
-  // state for fruit DATA
-  const [fruitStrings, setFruitStrings] = useState([
+  // state for str DATA
+  const [strings, setStrings] = useState([
     "apple",
     "banana",
     "cherry",
   ]);
-  const [fruitStringNew, setFruitStringNew] = useState("");
+  const [stringNew, setStringNew] = useState("");
 
   const [fruitObjects, setFruitObjects] = useState([
     { _id: "f1", name: "apple" },
@@ -19,20 +19,20 @@ export const Events = () => {
     // _id: new Date().toString(),
     name: "",
 });
-
 console.log(fruitObjectNew)
-  const handleFruitStringChange = (e) => {
-    setFruitStringNew(e.target.value);
+
+  const handleStringChange = (e) => {
+    setStringNew(e.target.value);
   };
 
   const addString = () => {
-    setFruitStrings([...fruitStrings, fruitStringNew]);
-    setFruitStringNew("");
+    setStrings([...strings, stringNew]);
+    setStringNew("");
   };
 
-  const deleteFruitString = (fruitIndex) => {
-    setFruitStrings((fruitStrings) => {
-      return fruitStrings.filter(( fruit) => fruit !== fruitIndex);
+  const deleteFruitString = (sringIndex) => {
+    setStrings((strings) => {
+      return strings.filter(( str) => str !== sringIndex);
     });
   };
 
@@ -43,17 +43,17 @@ console.log(fruitObjectNew)
         <div style={{ display: "flex", justifyContent: "center" }}>
           <input
             type="text"
-            value={fruitStringNew}
-            onChange={handleFruitStringChange}
+            value={stringNew}
+            onChange={handleStringChange}
           />
           <button onClick={addString}>+</button>
         </div>
         <div className="items">
-          {fruitStrings.map((fruit, index) => (
+          {strings.map((str, index) => (
             <div key={index} className="item">
               <span className="index">{index + 1}: &nbsp;</span>
-              <span className="name">{fruit} &nbsp;</span>
-              <button onClick={() => deleteFruitString(fruit)}>x</button>
+              <span className="name">{str} &nbsp;</span>
+              <button onClick={() => deleteFruitString(str)}>x</button>
             </div>
           ))}
         </div>
@@ -63,10 +63,10 @@ console.log(fruitObjectNew)
         <h2>OBJECTS:</h2>
         <div style={{ display: "flex", justifyContent: "center" }}></div>
         <div className="items">
-          {fruitObjects.map((fruit, index) => (
-            <div key={fruit._id} className="item">
+          {fruitObjects.map((str, index) => (
+            <div key={str._id} className="item">
               <div className="item">
-                {index + 1}: &nbsp;{fruit.name}
+                {index + 1}: &nbsp;{str.name}
               </div>
             </div>
           ))}
