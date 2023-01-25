@@ -16,7 +16,15 @@ export const Events = () => {
     name: "",
   });
   console.log(objectNew);
-  //STRING
+
+  const [forms, setForms] = useState([
+    { _id: "f1", name: "apple" },
+    { _id: "f2", name: "banana" },
+    { _id: "f3", name: "cherry" },
+  ]);
+  const [formNew, setFormNew] = useState("");
+
+  //STRINGS
   const handleStringChange = (e) => {
     setStringNew(e.target.value);
   };
@@ -31,7 +39,7 @@ export const Events = () => {
       return strings.filter((str) => str !== sringIndex);
     });
   };
-  // OBJECT
+  // OBJECTS
   const handleObjectChange = (e) => {
     setObjectNew({ ...objectNew, name: e.target.value });
   };
@@ -40,17 +48,28 @@ export const Events = () => {
     setObjects([...objects, objectNew]);
     setObjectNew({
       ...objectNew,
-      _id: Date.now().toString(),
       name: "",
     });
   };
   const deleteObject = (id) => {
-    const deleteObj = objects.filter((obj) => obj._id !== id);
-    setObjects(deleteObj);
+    setObjects(objects.filter((obj) => obj._id !== id));
+  };
+  // FORMS
+  const handleFormChange = (e) => {
+    setFormNew({ ...formNew, name: e.target.value });
+  };
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    setForms([...forms, formNew]);
+    setFormNew({ ...formNew, name: "" });
+  };
+  const removeForm = (id) => {
+    setForms(forms.filter((form) => form._id !== id));
   };
 
   return (
     <div>
+      {/* STRINGS */}
       <div className="strings">
         <h2>STRINGS:</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -67,7 +86,7 @@ export const Events = () => {
           ))}
         </div>
       </div>
-
+      {/* OBJECTS */}
       <div className="objects">
         <h2>OBJECTS:</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -91,6 +110,29 @@ export const Events = () => {
               >
                 x
               </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* FORM */}
+      <div className="forms">
+        <h2>FORMS:</h2>
+        <form onSubmit={onFormSubmit}>
+          <input
+            type="text"
+            name="name"
+            value={formNew.name}
+            onChange={handleFormChange}
+          />
+          <button type="submit">+</button>
+        </form>
+        <div className="form">
+          {forms.map((form, index) => (
+            <div key={form._id} className="item">
+              <span className="name">
+                {index + 1}: &nbsp; {form.name} &nbsp;
+              </span>
+              <button onClick={() => removeForm(form._id)}>x</button>
             </div>
           ))}
         </div>
