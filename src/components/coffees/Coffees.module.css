@@ -38,10 +38,37 @@
   justify-content: space-around;
   margin-top: 1em;
 }
-.item {
+/* .item {
   width: 50%;
   height: 2rem;
   background: white;
   color: rgb(99, 94, 105);
   padding-top: 0.7em;
+} */
+.items {
+  display: flex;
+  justify-content: space-between;
+  margin: .2 1rem;
+  padding: .5em;
+  place-items: center;
+  width: 90%;
+  height: 2em;
+  background-color: #fff;
 }
+.item{
+  padding-left: 1em;
+  border: none;
+  border-right: 1px solid gray;
+}
+.delete{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid gray;
+}
+.edit{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+

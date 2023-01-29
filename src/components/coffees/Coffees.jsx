@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useState } from "react";
 import { initialState, coffeesReducer } from "../../reducer";
 import style from "./Coffees.module.css";
+import { EditFeedback } from "./EditFeedback";
 
 export const Coffees = () => {
   const [state, dispatch] = useReducer(coffeesReducer, initialState);
@@ -8,8 +9,8 @@ export const Coffees = () => {
   const [amount, setAmount] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-  console.log("feedbacks:", feedbacks)
-  console.log("coffees:", coffees)
+  // console.log("feedbacks:", feedbacks);
+  // console.log("coffees:", coffees);
 
   useEffect(() => {
     localStorage.setItem("feedbacks", JSON.stringify(state.feedbacks));
@@ -38,12 +39,9 @@ export const Coffees = () => {
       type: "ADD_FEEDBACK",
       payload: feedbackNew,
     });
-    console.log("feedbackNew:",feedbackNew)
+    console.log("feedbackNew:", feedbackNew);
     setEmail("");
     setText("");
-  };
-  const removeFeedback = (id) => {
-    dispatch({ type: "REMOVE_FEEDBACK", payload: id });
   };
 
   return (
@@ -52,8 +50,8 @@ export const Coffees = () => {
       <div className={style.coffees}>
         {coffees.map((coffee) => (
           <div
-          key={coffee._id}
-          className={style.coffee}
+            key={coffee._id}
+            className={style.coffee}
             onClick={() =>
               dispatch({
                 type: "selectedCoffee",
@@ -99,13 +97,11 @@ export const Coffees = () => {
         </button>
         <div>
           {feedbacks.map((feedback, index) => (
-            <div key={feedback.id} className={style.feedbacks} >
-              <div className={style.item}>
-                {index + 1}: {feedback.email}
-              </div>
-              <div className={style.item}>{feedback.text} </div>
-              <button onClick={() => removeFeedback(feedback.id)}>x</button>
-            </div>
+            <EditFeedback
+              key={feedback.id}
+              feedback={feedback}
+              dispatch={dispatch}
+            />
           ))}
         </div>
       </form>

@@ -64,19 +64,18 @@ export const todoReducer = (state, action) => {
         ...state,
         todos: [...state.todos, action.payload],
       };
+    case "UPDATE_TODO":
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id !== action.payload.id ? todo : action.payload
+        ),
+      };
     case "REMOVE_TODO":
       return {
         ...state,
         todos: state.todos.filter((item) => item.id !== action.payload),
       };
-    case "UPDATE_TODO": {
-      return {
-        ...state,
-        todos: state.todos.map((todo)=>
-        todo.id !== action.payload.id ? todo : action.payload
-        )
-      };
-    }
     default: {
       return state;
     }
@@ -84,7 +83,7 @@ export const todoReducer = (state, action) => {
 };
 
 export const coffeesReducer = (state, action) => {
-  const {type, payload} = action;
+  const { type, payload } = action;
   switch (action.type) {
     case "selectedCoffee":
       console.log(payload);
@@ -108,11 +107,19 @@ export const coffeesReducer = (state, action) => {
         ...state,
         feedbacks: [...state.feedbacks, payload],
       };
+    case "UPDATE_FEEDBACK":
+      return {
+        ...state,
+        feedbacks: state.feedbacks.map((feedback) =>
+          feedback.id !== action.payload.id ? feedback : action.payload
+        ),
+      };
+
     case "REMOVE_FEEDBACK":
       return {
         ...state,
         feedbacks: state.feedbacks.filter(
-          (feedback) => feedback.id !== payload
+          (feedback) => feedback.id !== action.payload
         ),
       };
     default:

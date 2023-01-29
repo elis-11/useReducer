@@ -1,14 +1,15 @@
 import { useState } from "react";
 import style from "./Todo.module.css";
+
 export const TodoActions = ({ todo, dispatch, index }) => {
   const [editTodo, setEditTodo] = useState(todo);
 
-  const handleEditTodo = () => {
-    dispatch({ type: "UPDATE_TODO", payload: editTodo });
-  };
-
   const handleTodoChange = (e) => {
     setEditTodo({ ...editTodo, [e.target.name]: e.target.value });
+  };
+
+  const handleEditTodo = (editTodo) => {
+    dispatch({ type: "UPDATE_TODO", payload: editTodo });
   };
 
   const removeTodo = (id) => {
