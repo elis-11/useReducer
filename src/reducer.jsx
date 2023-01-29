@@ -10,6 +10,7 @@ export const initialState = {
   counter: 0,
   items: [],
   todos: JSON.parse(localStorage.getItem("todos")) || [],
+  news: [],
   cars: carsJson,
   selectedYear: undefined,
   filteredYears: [2018, 2019, 2020],
@@ -79,6 +80,33 @@ export const todoReducer = (state, action) => {
     default: {
       return state;
     }
+  }
+};
+
+export const newsReducer = (state, action) => {
+  switch (action.type) {
+    case "CREATE_TODO":
+      return {
+        news: [...state.news, action.payload],
+      };
+    case "DELETE_TODO":
+      return {
+        news: state.news.filter((t) => t.id !== action.payload.id),
+      };
+    case "UPDATE_TODO":
+      const updatedTodo = action.payload;
+      const updatedTodos = state.news.map((todo) => {
+        if (todo.id === updatedTodo.id) {
+          return updatedTodos;
+        }
+        return todo;
+      });
+      return {
+        ...state,
+        news: updatedTodo,
+      };
+    default:
+      return state;
   }
 };
 

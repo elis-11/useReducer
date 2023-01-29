@@ -13,6 +13,7 @@ import { CarsUR } from "./components/carsur/CarsUR";
 import { Images } from "./components/images/Images";
 import { ImagesNew } from "./components/images/ImagesNew";
 import { Events } from "./components/events/Events";
+import { New } from "./components/new/New";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <NavLink to="/">Coffees-UR</NavLink>
         <NavLink to="/count">Count-UR</NavLink>
         <NavLink to="/todo">Todo-UR</NavLink>
+        <NavLink to="/new">New-UR</NavLink>
         <NavLink to="/carsur">Cars-UR</NavLink>
         <NavLink to="/items">Items-UR</NavLink>
         <NavLink to="/carsyear">Cars-Year</NavLink>
@@ -37,6 +39,7 @@ function App() {
           <Route path="" element={<Coffees />} />
           <Route path="count" element={<Count />} />
           <Route path="todo" element={<Todo />} />
+          <Route path="new" element={<New />} />
           <Route path="carsur" element={<CarsUR />} />
           <Route path="items" element={<Items />} />
           <Route path="carsyear" element={<CarsYear />} />
