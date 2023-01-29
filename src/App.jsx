@@ -10,9 +10,9 @@ import { Movies } from "./components/movies/Movies";
 import { Items } from "./components/items/Items";
 import { CarsYear } from "./components/carsyear/CarsYear";
 import { CarsUR } from "./components/carsur/CarsUR";
-import { Events } from "./events/Events";
 import { Images } from "./components/images/Images";
 import { ImagesNew } from "./components/images/ImagesNew";
+import { Events } from "./components/events/Events";
 
 function App() {
   return (
