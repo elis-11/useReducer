@@ -37,7 +37,6 @@ export const Count = () => {
       <img src="https://picsum.photos/100.jpg" alt="photos" />
       <img src="https://picsum.photos/100?grayscale" alt="photos" />
       <img src="https://picsum.photos/id/56/100" alt="photos" />
-      <img src="https://picsum.photos/id/52/100" alt="photos" />
       <img src="https://picsum.photos/id/53/100" alt="photos" />
       <img src="https://picsum.photos/seed/picsum/100" alt="photos" />
       <img src="https://picsum.photos/id/215/100" alt="photos" />

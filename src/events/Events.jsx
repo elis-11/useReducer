@@ -23,9 +23,12 @@ export const Events = () => {
     { _id: "f3", name: "cherry" },
   ]);
   const [formNew, setFormNew] = useState("");
-
+ 
   //STRINGS
   const handleStringChange = (e) => {
+    // console.log({e: e});
+    // console.log({target:e.target})
+    // console.log({value: e.target.value})
     setStringNew(e.target.value);
   };
 

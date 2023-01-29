@@ -11,6 +11,8 @@ import { Items } from "./components/items/Items";
 import { CarsYear } from "./components/carsyear/CarsYear";
 import { CarsUR } from "./components/carsur/CarsUR";
 import { Events } from "./events/Events";
+import { Images } from "./components/images/Images";
+import { ImagesNew } from "./components/images/ImagesNew";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <NavLink to="/carsnew">CarsNew</NavLink>
         <NavLink to="/movies">Movies</NavLink>
         <NavLink to="/events">Events</NavLink>
+        <NavLink to="/images">Images</NavLink>
+        <NavLink to="/imagesnew">ImagesNew</NavLink>
       </nav>
       <div className="content">
         <Routes>
@@ -41,6 +45,8 @@ function App() {
           <Route path="carsnew" element={<CarsNew />} />
           <Route path="movies" element={<Movies />} />
           <Route path="events" element={<Events />} />
+          <Route path="images" element={<Images />} />
+          <Route path="imagesnew" element={<ImagesNew />} />
         </Routes>
       </div>
     </div>
