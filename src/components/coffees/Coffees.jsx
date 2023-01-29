@@ -98,7 +98,9 @@ export const Coffees = () => {
         <div>
           {feedbacks.map((feedback, index) => (
             <EditFeedback
+              number={index + 1}
               key={feedback.id}
+              feedbacks={feedbacks}
               feedback={feedback}
               dispatch={dispatch}
             />

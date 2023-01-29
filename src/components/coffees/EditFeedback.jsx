@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./Coffees.module.css";
 
-export const EditFeedback = ({ feedback, dispatch, index }) => {
+export const EditFeedback = ({ feedback, dispatch, number }) => {
   const [editFeedback, setEditFeedback] = useState(feedback);
 
   const handleFeedbackChange = (e) => {
@@ -40,7 +40,7 @@ export const EditFeedback = ({ feedback, dispatch, index }) => {
       ) : (
         <div className={style.items}>
           <div className={style.items}>
-            {index + 1}: {feedback.email}
+            {number}: {feedback.email}
           </div>
           <div className={style.item}>{feedback.text} </div>
         </div>
