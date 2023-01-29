@@ -84,9 +84,10 @@ export const todoReducer = (state, action) => {
 };
 
 export const coffeesReducer = (state, action) => {
+  const {type, payload} = action;
   switch (action.type) {
     case "selectedCoffee":
-      console.log(action.payload);
+      console.log(payload);
       return {
         ...state,
         message:
@@ -95,7 +96,7 @@ export const coffeesReducer = (state, action) => {
           " costs " +
           action.payload.costs +
           " €",
-        savedCoffee: action.payload,
+        savedCoffee: payload,
       };
     case "newMessage":
       return {
@@ -111,7 +112,7 @@ export const coffeesReducer = (state, action) => {
       return {
         ...state,
         feedbacks: state.feedbacks.filter(
-          (feedback) => feedback.id !== action.payload
+          (feedback) => feedback.id !== payload
         ),
       };
     default:
