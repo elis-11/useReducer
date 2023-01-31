@@ -23,7 +23,7 @@ input {
 .todo,
 .items {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 0.2 1rem;
   padding: 0.5em;
   place-items: center;
@@ -33,9 +33,10 @@ input {
   background-color: #fff;
   border-bottom: 1px solid gray;
 }
-.item {
+.input {
   padding-left: 1em;
   border: none;
+  width: 45%;
   border-right: 1px solid gray;
 }
 .delete {

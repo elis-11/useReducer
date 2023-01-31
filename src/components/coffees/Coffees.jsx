@@ -82,20 +82,20 @@ export const Coffees = () => {
           placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={style.feedback}
+          className={style.addFeedback}
         />
         <input
           type="text"
           placeholder="your feedback..."
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className={style.feedback}
+          className={style.addFeedback}
         />
-        <button className={style.send} type="submit">
+        <button className={style.sendFeedback} type="submit">
           {" "}
           Send feedback
         </button>
-        <div>
+        <div className={style.feedbacks}>
           {feedbacks.map((feedback, index) => (
             <EditFeedback
               index={index}

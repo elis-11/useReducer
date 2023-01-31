@@ -133,7 +133,7 @@ export const coffeesReducer = (state, action) => {
     case "ADD_FEEDBACK":
       return {
         ...state,
-        feedbacks: [...state.feedbacks, payload],
+        feedbacks: [...state.feedbacks, action.payload],
       };
     case "UPDATE_FEEDBACK":
       return {
@@ -142,7 +142,6 @@ export const coffeesReducer = (state, action) => {
           feedback.id !== action.payload.id ? feedback : action.payload
         ),
       };
-
     case "REMOVE_FEEDBACK":
       return {
         ...state,

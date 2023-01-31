@@ -21,14 +21,14 @@ export const TodoActions = ({ todo, dispatch, index }) => {
       {handleEditTodo ? (
         <div className={style.items}>
           <input
-            className={style.item}
+            className={style.input}
             type="text"
             name="title"
             value={editTodo.title}
             onChange={handleTodoChange}
           />
           <input
-            className={style.item}
+            className={style.input}
             type="text"
             name="description"
             value={editTodo.description}
@@ -37,10 +37,10 @@ export const TodoActions = ({ todo, dispatch, index }) => {
         </div>
       ) : (
       <div className={style.items}>
-        <div className={style.items}>
-          {index + 1}: {"  "} {todo.title}
+        <div className={style.item}>
+          {index + 1}: &nbsp; {todo.title} &nbsp;
         </div>
-        <div className={style.items}>{todo.description}</div>
+        <div className={style.item}>{todo.description}</div>
       </div>
       )}  
       <button className={style.delete} onClick={() => removeTodo(todo.id)}>
