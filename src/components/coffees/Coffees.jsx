@@ -78,11 +78,11 @@ export const Coffees = () => {
       {/* FEEDBACK */}
       <form onSubmit={onFeedback}>
         <input
-          className={style.feedback}
           type="text"
           placeholder="email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className={style.feedback}
         />
         <input
           type="text"
@@ -98,9 +98,8 @@ export const Coffees = () => {
         <div>
           {feedbacks.map((feedback, index) => (
             <EditFeedback
-              number={index + 1}
+              index={index}
               key={feedback.id}
-              feedbacks={feedbacks}
               feedback={feedback}
               dispatch={dispatch}
             />

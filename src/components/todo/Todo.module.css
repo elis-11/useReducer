@@ -8,12 +8,11 @@
   width: 100%;
 }
 input {
-    height: 2.5em;
-    width: 42%;
+  height: 2.5em;
+  width: 42%;
 }
 .add {
-    height: 3em;
-
+  height: 3em;
 }
 .todos {
   display: flex;
@@ -25,32 +24,27 @@ input {
 .items {
   display: flex;
   justify-content: space-between;
-  margin: .2 1rem;
-  padding: .5em;
+  margin: 0.2 1rem;
+  padding: 0.5em;
   place-items: center;
-  /* border: 1px solid white; */
   width: 90%;
   height: 2em;
+  color: black;
   background-color: #fff;
-  /* border: 1px solid red; */
   border-bottom: 1px solid gray;
 }
-.items {
-  display: flex;
-  justify-content: space-between;
-}
-.item{
+.item {
   padding-left: 1em;
   border: none;
   border-right: 1px solid gray;
 }
-.delete{
+.delete {
   background: none;
   border: none;
   cursor: pointer;
   border-right: 1px solid gray;
 }
-.edit{
+.edit {
   background: none;
   border: none;
   cursor: pointer;

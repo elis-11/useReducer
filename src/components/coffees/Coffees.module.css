@@ -14,10 +14,6 @@
 .coffee:hover {
   opacity: 0.6;
 }
-.input {
-  height: 2rem;
-  padding-left: 1rem;
-}
 .button {
   height: 2.5rem;
   margin: 1rem 0;
@@ -27,6 +23,8 @@
   height: 2rem;
   padding-left: 1rem;
   margin: 1rem 0;
+  place-items: start;
+  border: 1px solid red;
 }
 .send {
   height: 2.5rem;
@@ -37,14 +35,8 @@
   display: flex;
   justify-content: space-around;
   margin-top: 1em;
+  /* place-items: center; */
 }
-/* .item {
-  width: 50%;
-  height: 2rem;
-  background: white;
-  color: rgb(99, 94, 105);
-  padding-top: 0.7em;
-} */
 .items {
   display: flex;
   justify-content: space-between;
@@ -54,11 +46,15 @@
   width: 90%;
   height: 2em;
   background-color: #fff;
+  color: black;
 }
-.item{
-  padding-left: 1em;
-  border: none;
-  border-right: 1px solid gray;
+.item {
+  width: 50%;
+  height: 2rem;
+  background: white;
+  color: rgb(99, 94, 105);
+  padding-top: 0.7em;
+  
 }
 .delete{
   background-color: #fff;
