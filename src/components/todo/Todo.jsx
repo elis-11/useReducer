@@ -29,11 +29,12 @@ export const Todo = () => {
   };
   console.log(todos.length);
 
-
   return (
     <div className={style.root}>
       <h2>Todos-UR</h2>
-      <h3>Total: {todos.length} {todos.length === 1 ? 'todo' : 'todos'} </h3>
+      <h3>
+        Total: {todos.length} {todos.length === 1 ? "todo" : "todos"}{" "}
+      </h3>
       <div className="addTodo">
         <form onSubmit={addTodo} className={style.form}>
           <input
@@ -58,7 +59,12 @@ export const Todo = () => {
       </div>
       <div className={style.todos}>
         {todos.map((todo, index) => (
-          <TodoActions key={todo.id} dispatch={dispatch} index={index} todo={todo} />
+          <TodoActions
+            key={todo.id}
+            dispatch={dispatch}
+            index={index}
+            todo={todo}
+          />
         ))}
       </div>
     </div>

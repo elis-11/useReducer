@@ -38,7 +38,7 @@ export const TodoActions = ({ todo, dispatch, index }) => {
       ) : (
         <div className={style.items}>
           <div className={style.items}>
-            {index}: {"  "} {todo.title}
+            {index + 1}: {"  "} {todo.title}
           </div>
           <div className={style.items}>{todo.description}</div>
         </div>
