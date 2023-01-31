@@ -10,14 +10,12 @@ export const Coffees = () => {
   // const [email, setEmail] = useState("");
   // const [text, setText] = useState("");
   const [feedbackNew, setFeedbackNew] = useState({
-    id: new Date().toString(),
-    // id: Math.random().toString(),
-    // id: Date.now().toString(),
+    id: Math.random().toString(),
     email: "",
     text: "",
   });
-  console.log("feedbacks:", feedbacks);
-  console.log("coffees:", coffees);
+  // console.log("feedbacks:", feedbacks);
+  // console.log("coffees:", coffees);
 
   useEffect(() => {
     localStorage.setItem("feedbacks", JSON.stringify(state.feedbacks));
@@ -54,9 +52,9 @@ export const Coffees = () => {
     <div className={style.root}>
       <h2>Coffees</h2>
       <div className={style.coffees}>
-        {coffees.map((coffee) => (
+        {coffees.map((coffee, index) => (
           <div
-            key={coffee._id}
+            key={index}
             className={style.coffee}
             onClick={() =>
               dispatch({
@@ -113,7 +111,7 @@ export const Coffees = () => {
           {feedbacks.map((feedback, index) => (
             <EditFeedback
               index={index}
-              key={feedback.id}
+              key={index}
               feedback={feedback}
               dispatch={dispatch}
             />
