@@ -10,9 +10,10 @@ export const Coffees = () => {
   // const [email, setEmail] = useState("");
   // const [text, setText] = useState("");
   const [feedbackNew, setFeedbackNew] = useState({
-    id: new Date().toString(),
+    // id: new Date().toString(),
     // id: Math.random().toString(),
     // id: Date.now().toString(),
+    id: Math.floor(Math.random() * 100).toString,
     email: "",
     text: "",
   });

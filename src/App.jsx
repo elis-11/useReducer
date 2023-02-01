@@ -18,7 +18,7 @@ import { New } from "./components/new/New";
 function App() {
   return (
     <div className="App">
-      <nav className="nav">
+      <nav >
         <NavLink to="/">Coffees-UR</NavLink>
         <NavLink to="/count">Count-UR</NavLink>
         <NavLink to="/todo">Todo-UR</NavLink>
