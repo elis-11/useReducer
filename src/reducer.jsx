@@ -139,14 +139,14 @@ export const coffeesReducer = (state, action) => {
       return {
         ...state,
         feedbacks: state.feedbacks.map((feedback) =>
-          feedback.id !== action.payload.id ? feedback : action.payload
+          feedback._id !== action.payload.id ? feedback : action.payload
         ),
       };
     case "REMOVE_FEEDBACK":
       return {
         ...state,
         feedbacks: state.feedbacks.filter(
-          (feedback) => feedback.id !== action.payload
+          (feedback) => feedback._id !== action.payload
         ),
       };
     default:

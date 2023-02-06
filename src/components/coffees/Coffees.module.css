@@ -32,23 +32,27 @@
 }
 .feedback {
   display: flex;
+  background-color: #fff;
+  align-items: center;
+  margin-bottom: .2em;
+}
+.index{
+  color: #000;
+  padding-left: 1em;
 }
 .items {
   display: flex;
   justify-content: space-around;
-  /* margin: .1rem; */
   padding: 0.5em;
   place-items: center;
   width: 90%;
   height: 2em;
   color: black;
-  /* background-color: #fff; */
 
 }
 .item {
   width: 50%;
   height: 2rem;
-  /* background: white; */
   padding-left: 1rem;
   color: rgb(99, 94, 105);
   padding-top: 0.7em;

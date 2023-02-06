@@ -19,6 +19,7 @@ export const EditFeedback = ({ feedback, dispatch, index }) => {
 
   return (
     <div className={style.feedback}>
+      <div className={style.index}>{index + 1}: </div>
       {handleEditFeedback ? (
         <div className={style.items}>
           <input
@@ -38,21 +39,19 @@ export const EditFeedback = ({ feedback, dispatch, index }) => {
         </div>
       ) : (
         <div className={style.items}>
-          <div className={style.item}>
-            {index + 1}: {feedback.email}
-          </div>
+          <div className={style.item}>{feedback.email}</div>
           <div className={style.item}>{feedback.text} </div>
         </div>
       )}
       <button
         className={style.edit}
-        onClick={() => handleEditFeedback(feedback.id)}
+        onClick={() => handleEditFeedback(feedback._id)}
       >
         edit
       </button>
       <button
         className={style.delete}
-        onClick={() => removeFeedback(feedback.id)}
+        onClick={() => removeFeedback(feedback._id)}
       >
         delete
       </button>

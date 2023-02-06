@@ -10,10 +10,10 @@ export const Coffees = () => {
   // const [email, setEmail] = useState("");
   // const [text, setText] = useState("");
   const [feedbackNew, setFeedbackNew] = useState({
-    // id: new Date().toString(),
-    // id: Math.random().toString(),
-    // id: Date.now().toString(),
-    id: Math.floor(Math.random() * 100).toString,
+    // _id: new Date().toString(),
+    // _id: Math.random().toString(),
+    // _id: Date.now().toString(),
+    _id: Math.floor(Math.random() * 100).toString,
     email: "",
     text: "",
   });
@@ -55,7 +55,7 @@ export const Coffees = () => {
     <div className={style.root}>
       <h2>Coffees</h2>
       <div className={style.coffees}>
-        {coffees.map((coffee) => (
+        {coffees.map((coffee, index) => (
           <div
             key={coffee._id}
             className={style.coffee}
@@ -114,7 +114,7 @@ export const Coffees = () => {
           {feedbacks.map((feedback, index) => (
             <EditFeedback
               index={index}
-              key={feedback.id}
+              key={feedback._id}
               feedback={feedback}
               dispatch={dispatch}
             />
